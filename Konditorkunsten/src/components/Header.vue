@@ -19,19 +19,9 @@ export default {
 </script>
 
 <style scoped>
-:root {
---primary-bg-beige: #E2D9D2;
---second-bg-beige: #E8E3DD;
---white: #FFFFFF;
---black: #000000;
---btn-brown: #9E7E6F;
---cta-brown: #382B25;
---cta-gold: #F0BD75;
---footer-bg-beige: #C9BFB6;
-}
 
 header {
-    background: #E2D9D2;
+    background: var(--secondary-bg-beige);
     color: var(--black);
     width: 100vw;
     height: 15vw;
@@ -39,21 +29,24 @@ header {
 }
 
 nav {
-    width: 70vw;
+    width: 100%;
     display: flex;
-    align-content: center;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    gap: 0 10%;
+    margin-right: 5%;
+    font-size: 1.6vw;
+    font-weight: bold;
 }
 
 nav>* {
-    height: 5vw;
+    margin-top: 2.5vw;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
 a {
-    color: black;
+    color: var(--black);
 }
 
 </style>

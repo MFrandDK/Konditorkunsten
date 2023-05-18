@@ -1,5 +1,7 @@
 <script setup>
 import Header from '../components/Header.vue';
+import Products from '../components/Products.vue';
+
 
 import { useProductStore } from '@/stores/ProductStore';
 useProductStore();
@@ -11,12 +13,22 @@ useProductStore();
   <body>
     <Header />
     <main>
-      <h1>Shop</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab autem est similique aliquid eaque id perspiciatis tempore consequatur beatae nobis expedita, non aperiam officia nisi. Nobis excepturi deleniti voluptates nam?</p>
-
-      <section>
-        
+      <nav class="sorteringsContainer">
+        <a class="udvalgBtn" href="#">Alle varer</a>
+        <a class="udvalgBtn" href="#">Kager</a>
+        <a class="udvalgBtn" href="#">Arrangementkager</a>
+        <a class="udvalgBtn" href="#">Alle varer</a>
+        <a class="udvalgBtn sorteringsBtn" href="#">Sorter efter: <p class="udvalgBtn">Pris</p> </a>
+      </nav>
+      <section class="productContainer">
+        <Products />
+        <Products />
+        <Products />
+        <Products />
+        <Products />
+        <Products />
       </section>
+      
     </main>
   </body>
 </template>
@@ -24,17 +36,39 @@ useProductStore();
 <style scoped>
   body {
     width: auto;
-    /* display: flex; */
   }
 
-  h1 {
-    background-color: rgb(115, 108, 255);
-    color: red;
+
+  .sorteringsContainer {
+    width: 100%;
+    height: 8vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: .1px solid var(--primary-bg-beige);
   }
 
-  p {
-        text-align: center;
-        color: red;
+  .udvalgBtn {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  .sorteringsBtn {
+    margin-left: 10%;
+  }
+
+  .productContainer {
+    width: 100%;
+    /* height: auto; */
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 450px);
+    padding: 5%;
+    gap: 5%;
   }
 
 </style>

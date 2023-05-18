@@ -23,7 +23,7 @@
 
 :root {
 --primary-bg-beige: #E2D9D2;
---second-bg-beige: #E8E3DD;
+--secondary-bg-beige: #E8E3DD;
 --white: #FFFFFF;
 --black: #000000;
 --btn-brown: #9E7E6F;
