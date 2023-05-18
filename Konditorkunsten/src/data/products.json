@@ -1,0 +1,59 @@
+{
+    "products": 
+    {
+      "data": 
+        {
+        "items": 
+            [
+                {
+                    "name": "Chokolade Cheesecake",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 80
+                },
+                {
+                    "name": "Frugttærte",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 80
+                },
+                {
+                    "name": "Cupcake Swirlies",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 50
+                },
+                {
+                    "name": "Chokokage m. frugtboom",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 80
+                },
+                {
+                    "name": "Jordbærdtærte",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 80
+                },
+                {
+                    "name": "Sommer frugttærter",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 60
+                },
+                {
+                    "name": "Flødeboller",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 50
+                },
+                {
+                    "name": "Chokolader",
+                    "image": "Mangler-Billede.jpg",
+                    "description": "Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts.",
+                    "price": 40
+                }
+            ]
+        }
+    }
+}

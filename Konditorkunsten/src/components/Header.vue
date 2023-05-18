@@ -35,10 +35,11 @@ header {
     color: var(--black);
     width: 100vw;
     height: 15vw;
+    display: flex;
 }
 
 nav {
-    width: 80%;
+    width: 70vw;
     display: flex;
     align-content: center;
     justify-content: space-evenly;
@@ -48,6 +49,7 @@ nav>* {
     height: 5vw;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 a {
