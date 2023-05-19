@@ -62,13 +62,13 @@ useProductStore();
 
   .productContainer {
     width: 100%;
-    /* height: auto; */
+    height: auto;
     display: grid;
+    justify-items: center;
     grid-auto-flow: row;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 450px);
-    padding: 5%;
+    grid-template-columns:  repeat(3, 1fr);
     gap: 5%;
+    margin-top: 5%;
   }
 
 </style>

@@ -24,7 +24,7 @@ header {
     background: var(--secondary-bg-beige);
     color: var(--black);
     width: 100vw;
-    height: 15vw;
+    height: 12vw;
     display: flex;
 }
 
@@ -34,7 +34,7 @@ nav {
     justify-content: flex-end;
     gap: 0 10%;
     margin-right: 5%;
-    font-size: 1.6vw;
+    font-size: 1.5vw;
     font-weight: bold;
 }
 

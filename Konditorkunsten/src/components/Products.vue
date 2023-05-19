@@ -1,5 +1,5 @@
 <template>
-    <article class="productContainer">
+    <article class="singleProductContainer">
         <img src="../assets/pictures/logo-konditorkunsten.png" alt="">
         <section></section>
         <article class="productInfo">
@@ -18,8 +18,8 @@ export default {
 
 <style scoped>
 
-.productContainer {
-    height: 25vw;
+.singleProductContainer {
+    min-height: 25vw;
     width: 16vw;
     background-color: var(--primary-bg-beige);
     text-align: center;
@@ -31,8 +31,8 @@ img {
 }
 
 button {
+    height: 3vw;
     width: 10vw;
-    padding: 1vw 2vw;
     background-color: var(--btn-brown);
     color: var(--white);
     border-style: none;
