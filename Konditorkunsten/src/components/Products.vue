@@ -19,8 +19,8 @@ export default {
 <style scoped>
 
 .singleProductContainer {
-    min-height: 25vw;
-    width: 16vw;
+    min-height: 28vw;
+    width: 20vw;
     background-color: var(--primary-bg-beige);
     text-align: center;
 }

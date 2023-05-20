@@ -1,5 +1,7 @@
 <script setup>
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
+
 import Products from '../components/Products.vue';
 
 
@@ -28,8 +30,8 @@ useProductStore();
         <Products />
         <Products />
       </section>
-      
     </main>
+    <Footer />
   </body>
 </template>
 
@@ -67,8 +69,8 @@ useProductStore();
     justify-items: center;
     grid-auto-flow: row;
     grid-template-columns:  repeat(3, 1fr);
-    gap: 5%;
-    margin-top: 5%;
+    gap: 10% 2.5%;
+    margin: 5vw 0 12vw 0;
   }
 
 </style>
