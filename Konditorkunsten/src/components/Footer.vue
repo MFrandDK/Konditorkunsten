@@ -72,7 +72,7 @@ ul:nth-child(2) {
 
 .mapIcon {
     width: 1.6vw;
-    margin: 0 0 .1vw 1.5vw ;
+    margin: 0 0 .2vw 1.5vw ;
 }
 
 

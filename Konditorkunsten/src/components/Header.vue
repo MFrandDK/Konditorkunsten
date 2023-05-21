@@ -7,7 +7,7 @@
             <RouterLink to="/about">Kurser</RouterLink>
             <RouterLink to="/about">Om os</RouterLink>
             <RouterLink to="/about">Kontakt</RouterLink>
-            <RouterLink to="/about"><img src="../assets/pictures/Shopping-kurv.svg" alt=""></RouterLink>
+            <RouterLink to="/about"><img class="kurvIcon" src="../assets/pictures/Shopping-kurv.svg" alt="Shopping kurv | Gå til kurven"></RouterLink>
         </nav>
     </header>
 </template>
@@ -47,6 +47,10 @@ nav>* {
 
 a {
     color: var(--black);
+}
+
+.kurvIcon {
+    width: 2.5vw;
 }
 
 </style>

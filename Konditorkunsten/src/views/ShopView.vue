@@ -1,6 +1,7 @@
 <script setup>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import KontaktComponent from '../components/KontaktComponent.vue';
 
 import Products from '../components/Products.vue';
 
@@ -15,12 +16,16 @@ useProductStore();
   <body>
     <Header />
     <main>
-      <nav class="sorteringsContainer">
-        <a class="udvalgBtn" href="#">Alle varer</a>
-        <a class="udvalgBtn" href="#">Kager</a>
-        <a class="udvalgBtn" href="#">Arrangementkager</a>
-        <a class="udvalgBtn" href="#">Alle varer</a>
-        <a class="udvalgBtn sorteringsBtn" href="#">Sorter efter: <p class="udvalgBtn">Pris</p> </a>
+      <nav class="sorteringsNav">
+        <ul class="sorteringsContainer">
+          <li><a class="udvalgBtn" href="#">Alle varer</a></li>
+          <li><a class="udvalgBtn" href="#">Kager</a></li>
+          <li><a class="udvalgBtn" href="#">Arrangementkager</a></li>
+          <li><a class="udvalgBtn" href="#">Specialiteter</a></li>
+        </ul>
+        <ul class="sorteringsContainer">
+          <li><a class="sorteringsBtn" href="#">Sorter efter: <p class="udvalgBtn">Pris</p> </a></li>
+        </ul>
       </nav>
       <section class="productContainer">
         <Products />
@@ -30,6 +35,7 @@ useProductStore();
         <Products />
         <Products />
       </section>
+      <KontaktComponent />
     </main>
     <Footer />
   </body>
@@ -40,6 +46,9 @@ useProductStore();
     width: auto;
   }
 
+  .sorteringsNav {
+    display: flex;
+  }
 
   .sorteringsContainer {
     width: 100%;
@@ -48,18 +57,32 @@ useProductStore();
     justify-content: space-evenly;
     align-items: center;
     border-bottom: .1px solid var(--primary-bg-beige);
+    list-style: none;
   }
+.sorteringsContainer:nth-child(1) {
+  width: 70%;
+}
+.sorteringsContainer:nth-child(2) {
+  width: 30%;
+}
+
+.sorteringsContainer>li {
+  width: auto;
+}
 
   .udvalgBtn {
-    width: 25%;
     display: flex;
     justify-content: center;
     text-decoration: none;
     color: black;
   }
 
-  .sorteringsBtn {
-    margin-left: 10%;
+  .sorteringsBtn { 
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    gap: 0 2vw;
   }
 
   .productContainer {
