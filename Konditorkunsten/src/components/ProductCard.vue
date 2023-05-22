@@ -1,7 +1,6 @@
 <template>
     <article class="singleProductContainer">
         <img src="../assets/pictures/logo-konditorkunsten.png" alt="">
-        <section></section>
         <article class="productInfo">
             <h3>Kage navn</h3>
             <button>Se produkt</button>
@@ -10,16 +9,13 @@
 </template>
 
 <script>
-
 export default {
-    name: "ProductsComponent"
+    name: "ProductCardComponent"
 }
 </script>
 
 <style scoped>
-
 .singleProductContainer {
-    min-height: 28vw;
     width: 20vw;
     background-color: var(--primary-bg-beige);
     text-align: center;

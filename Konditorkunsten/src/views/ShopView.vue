@@ -1,20 +1,21 @@
 <script setup>
+
 import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+import ProductCard from '../components/ProductCard.vue';
 import KontaktComponent from '../components/KontaktComponent.vue';
-
-import Products from '../components/Products.vue';
-
+import Footer from '../components/Footer.vue';
 
 import { useProductStore } from '@/stores/ProductStore';
-useProductStore();
-
+const productStore = useProductStore();
+productStore.fill();
 
 </script>
 
+
+
 <template>
   <body>
-    <Header />
+    <Header id="headerTag" />
     <main>
       <nav class="sorteringsNav">
         <ul class="sorteringsContainer">
@@ -28,12 +29,11 @@ useProductStore();
         </ul>
       </nav>
       <section class="productContainer">
-        <Products />
-        <Products />
-        <Products />
-        <Products />
-        <Products />
-        <Products />
+        <ProductCard 
+          v-for="product in productStore.products"
+          :key="product.name"
+          :product="product"
+        />
       </section>
       <KontaktComponent />
     </main>
@@ -42,9 +42,11 @@ useProductStore();
 </template>
 
 <style scoped>
-  body {
-    width: auto;
-  }
+.positionSticky {
+  position: fixed;
+  top: 0;
+  widows: 100%;
+}
 
   .sorteringsNav {
     display: flex;
@@ -56,6 +58,7 @@ useProductStore();
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    border-top: .1px solid var(--primary-bg-beige);
     border-bottom: .1px solid var(--primary-bg-beige);
     list-style: none;
   }
@@ -86,14 +89,12 @@ useProductStore();
   }
 
   .productContainer {
-    width: 100%;
-    height: auto;
     display: grid;
     justify-items: center;
     grid-auto-flow: row;
     grid-template-columns:  repeat(3, 1fr);
-    gap: 10% 2.5%;
-    margin: 5vw 0 12vw 0;
+    grid-gap: 5vw 0;
+    margin: 5vw 0;
   }
 
 </style>
