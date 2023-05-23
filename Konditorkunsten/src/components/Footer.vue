@@ -36,6 +36,7 @@ footer {
     width: 100vw;
     height: auto;
     padding: 3vw 4vw;
+    border-top: .1px solid var(--btn-brown);
 }
 
 p {

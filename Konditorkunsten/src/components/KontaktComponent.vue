@@ -14,6 +14,7 @@
         </p>
       </div>
     </article>
+
     <article class="centerText">
       <h2>Har du en kommende speciel anledning?</h2>
       <p>Klik her for at komme i kontakt</p>
@@ -29,14 +30,16 @@ export default {
 </script>
 
 <style scoped>
+p {
+  color: var(--black);
+  font-size: 1.2vw;
+}
+
+
 section {
   background: var(--primary-bg-beige);
   color: var(--black);
   padding: 3vw 4vw;
-}
-
-p {
-  color: var(--black);
 }
 
 img {
@@ -47,6 +50,7 @@ article:nth-child(1) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
+  padding-top: 5vw;
 }
 
 article:nth-child(1) > div {
@@ -54,10 +58,22 @@ article:nth-child(1) > div {
   margin: auto 0;
 }
 
+h1 {
+  font-size: 3vw;
+}
+
+article:nth-child(1) > div > p {
+    margin: 0 auto;
+    width: 80%;
+}
+
 article:nth-child(2) {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7.5vw 0;
+  gap: 1.5vw 0;
 }
 
 .centerText {
@@ -70,7 +86,9 @@ button {
   background-color: var(--cta-brown);
   color: var(--white);
   border-style: none;
-  border-radius: 15px;
+  border-radius: 10px;
   font-weight: bold;
+  font-size: 1.5vw;
+  margin-top: 2vw;
 }
 </style>

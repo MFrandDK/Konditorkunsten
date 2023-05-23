@@ -34,6 +34,7 @@ button {
     border-style: none;
     border-radius: 15px;
     font-weight: bold;
+    font-size: 1.2vw;
 }
 
 h3 {

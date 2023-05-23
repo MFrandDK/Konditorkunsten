@@ -11,11 +11,9 @@ productStore.fill();
 
 </script>
 
-
-
 <template>
   <body>
-    <Header id="headerTag" />
+    <Header />
     <main>
       <nav class="sorteringsNav">
         <ul class="sorteringsContainer">
@@ -25,7 +23,7 @@ productStore.fill();
           <li><a class="udvalgBtn" href="#">Specialiteter</a></li>
         </ul>
         <ul class="sorteringsContainer">
-          <li><a class="sorteringsBtn" href="#">Sorter efter: <p class="udvalgBtn">Pris</p> </a></li>
+          <li><a class="sorteringsBtn" href="#">Sorter efter: <p class="udvalgBtn">Pris</p><p class="arrowDown">▶</p></a></li>
         </ul>
       </nav>
       <section class="productContainer">
@@ -42,12 +40,6 @@ productStore.fill();
 </template>
 
 <style scoped>
-.positionSticky {
-  position: fixed;
-  top: 0;
-  widows: 100%;
-}
-
   .sorteringsNav {
     display: flex;
   }
@@ -58,9 +50,9 @@ productStore.fill();
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-top: .1px solid var(--primary-bg-beige);
     border-bottom: .1px solid var(--primary-bg-beige);
     list-style: none;
+    font-size: 1.2vw;
   }
 .sorteringsContainer:nth-child(1) {
   width: 70%;
@@ -78,6 +70,12 @@ productStore.fill();
     justify-content: center;
     text-decoration: none;
     color: black;
+  }
+
+  .arrowDown {
+    color: var(--black);
+    rotate: 90deg;
+    z-index: -1;
   }
 
   .sorteringsBtn { 

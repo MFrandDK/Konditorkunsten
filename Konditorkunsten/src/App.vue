@@ -33,7 +33,7 @@
 }
 
 p {
-  color: white;
+  color: var(--white);
 }
 
 </style>
