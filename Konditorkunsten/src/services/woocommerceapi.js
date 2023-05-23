@@ -17,3 +17,8 @@ export async function fetchWooCommerceProducts() {
     }
 }
 
+export default {
+    getHelloWorld() {
+      return api.get('/helloworld');
+    }
+  };

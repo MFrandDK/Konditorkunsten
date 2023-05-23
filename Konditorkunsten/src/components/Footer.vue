@@ -2,15 +2,17 @@
     <footer>
         <nav>
             <ul>
-                <li><h3>KONTAKT</h3></li>
-                <li><p>+45 7325 8376</p></li>
+                <a class="removeListStyling" href="tel:+4522425320">
+                    <li><h3>KONTAKT</h3></li>
+                    <li>+45 2242 5320</li>
+                </a>
             </ul>
 
             <ul>
-                <li><img class="smileyIcon" src="../assets/pictures/Smiley-icon.svg" alt="Smiley rapport"></li>
-                <i class="fab fa-2x fa-facebook-f"></i>
-                <i class="fab fa-2x fa-instagram"></i>
-                <li><img class="mapIcon" src="../assets/pictures/Map-icon.svg" alt="Smiley rapport"></li>
+                <a rel="nofollow" target="_blank" href="https://www.findsmiley.dk/1271351"><li><img class="smileyIcon" src="../assets/pictures/Smiley-icon.svg" alt="Smiley rapport" loading="lazy"></li></a>
+                <a rel="nofollow" target="_blank" href="https://www.facebook.com/people/konditorkunsten/100088804904557/"><i  class="fab fa-2x fa-facebook-f removeListStyling" loading="lazy"></i></a>
+                <a rel="nofollow" target="_blank" href="https://www.instagram.com/konditorkunsten/?fbclid=IwAR2yCbD6OC76Wc9ptlHy88OO6IcO7FiKPc4G720ODnccT_7wuR9G3gP-CpA "><i class="fab fa-2x fa-instagram removeListStyling" loading="lazy"></i></a>
+                <a rel="nofollow" target="_blank" href="https://goo.gl/maps/zBkjTqeQsJyt5EvCA"><li><img  class="mapIcon" src="../assets/pictures/Map-icon.svg" alt="Smiley rapport" loading="lazy"></li></a>
             </ul>
 
             <ul>
@@ -37,6 +39,7 @@ footer {
     height: auto;
     padding: 3vw 4vw;
     border-top: .1px solid var(--btn-brown);
+    font-size: 1.25vw;
 }
 
 p {
@@ -69,14 +72,18 @@ ul:nth-child(2) {
 .smileyIcon {
     width: 2.2vw;
     margin-right: 1.5vw;
+    cursor: pointer;
 }
 
 .mapIcon {
     width: 1.6vw;
     margin: 0 0 .2vw 1.5vw ;
+    cursor: pointer;
 }
 
-
+a>*:hover {
+    color: var(--white);
+}
 
 
 </style>

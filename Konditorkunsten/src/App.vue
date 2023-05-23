@@ -34,6 +34,11 @@
 
 p {
   color: var(--white);
+} 
+
+.removeListStyling {
+    color: black;
+    text-decoration: none;
 }
 
 @keyframes fadeIn {

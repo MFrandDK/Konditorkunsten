@@ -11,7 +11,7 @@
         ><img
           class="kurvIcon"
           src="../assets/pictures/Shopping-kurv.svg"
-          alt="Shopping kurv | Gå til kurven"
+          alt="Shopping kurv | Åben kurven" loading="lazy"
         />
         <p class="antalVarerCirkel">10</p>
       </a>

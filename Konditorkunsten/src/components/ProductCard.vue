@@ -1,6 +1,6 @@
 <template>
     <article class="singleProductContainer">
-        <img src="../assets/pictures/logo-konditorkunsten.png" alt="">
+        <img src="../assets/pictures/logo-konditorkunsten.png" alt="" loading="lazy">
         <article class="productInfo">
             <h3>Kage navn</h3>
             <button>Se produkt</button>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: "ProductCardComponent"
+    name: "ProductInfoCardComponent"
 }
 </script>
 

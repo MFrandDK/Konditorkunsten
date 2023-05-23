@@ -3,7 +3,7 @@
     <article>
       <img
         src="../assets/pictures/Flødeboller.jpg"
-        alt="Konditorkunstens flødeboller på et gyldent fad"
+        alt="Konditorkunstens flødeboller på et gyldent fad" loading="lazy"
       />
       <div>
         <h1>Mere end bare kage</h1>
@@ -44,6 +44,7 @@ section {
 
 img {
   border-radius: 100%;
+  width: 35vw;
 }
 
 article:nth-child(1) {
@@ -72,7 +73,7 @@ article:nth-child(2) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 7.5vw 0;
+  padding: 12vw 0;
   gap: 1.5vw 0;
 }
 
@@ -81,8 +82,8 @@ article:nth-child(2) {
 }
 
 button {
-  height: 3vw;
-  width: 12vw;
+  height: 3.5vw;
+  width: 15vw;
   background-color: var(--cta-brown);
   color: var(--white);
   border-style: none;
@@ -90,5 +91,11 @@ button {
   font-weight: bold;
   font-size: 1.5vw;
   margin-top: 2vw;
+  cursor: pointer;
 }
+button:hover {
+  color: var(--cta-brown);
+  background-color: var(--white);
+}
+
 </style>
