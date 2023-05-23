@@ -28,20 +28,6 @@
 
 export default {
     name: "HeaderComponent",
-
-    // setup() {
-    //     window.onscroll = function() {StickyOnScroll()};
-    //     const header = document.getElementById("headerTag");
-    //     let sticky = header.offsetTop;
-
-    //     function StickyOnScroll() {
-    //         if (window.pageYOffset > sticky) {
-    //             header.classList.add("positionSticky")
-    //         } else {
-    //             header.classList.remove("positionSticky");
-    //         }
-    //     }
-    // }
 }
 </script>
 

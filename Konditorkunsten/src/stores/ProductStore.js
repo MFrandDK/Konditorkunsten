@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 
+
+
 export const useProductStore = defineStore('ProductStore', {
   state: () => {
     return {
@@ -15,3 +17,4 @@ export const useProductStore = defineStore('ProductStore', {
 
   //getters
 })
+
