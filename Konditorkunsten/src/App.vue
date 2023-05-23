@@ -36,4 +36,64 @@ p {
   color: var(--white);
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn .350ms ease-in-out;
+}
+
+.fadeOut {
+    animation: fadeOut .5s ease;
+}
+
+@keyframes animateInFromTop {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animateInFromRight {
+    animation: animateInFromTop 1s ease-in-out;
+}
+
+@keyframes animateInFromTop {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animateOutToRight {
+    animation: animateInFromTop 1s ease-in-out;
+}
+
 </style>

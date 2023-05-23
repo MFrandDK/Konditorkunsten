@@ -7,14 +7,14 @@
       <RouterLink to="/about">Kurser</RouterLink>
       <RouterLink to="/about">Om os</RouterLink>
       <RouterLink to="/about">Kontakt</RouterLink>
-      <RouterLink class="kurv" to="/about"
+      <a class="kurv" to="/kurv"
         ><img
           class="kurvIcon"
           src="../assets/pictures/Shopping-kurv.svg"
           alt="Shopping kurv | Gå til kurven"
         />
-        <p class="antalVarerCirkel">10</p></RouterLink
-      >
+        <p class="antalVarerCirkel">10</p>
+      </a>
     </nav>
   </header>
 </template>
@@ -58,6 +58,7 @@ header {
   border-bottom: .1px solid var(--btn-brown);
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 nav {
@@ -87,6 +88,7 @@ a {
 
 .kurvIcon {
   width: 2.5vw;
+  cursor: pointer;
 }
 
 .antalVarerCirkel {

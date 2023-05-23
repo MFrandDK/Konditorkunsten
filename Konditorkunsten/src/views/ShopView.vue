@@ -1,6 +1,7 @@
 <script setup>
 
 import Header from '../components/Header.vue';
+import KurvSlider from '../components/KurvSlider.vue';
 import ProductCard from '../components/ProductCard.vue';
 import KontaktComponent from '../components/KontaktComponent.vue';
 import Footer from '../components/Footer.vue';
@@ -14,7 +15,8 @@ productStore.fill();
 <template>
   <body>
     <Header />
-    <main>
+    <main class="blurMain">
+      <KurvSlider />
       <nav class="sorteringsNav">
         <ul class="sorteringsContainer">
           <li><a class="udvalgBtn" href="#">Alle varer</a></li>
@@ -40,7 +42,11 @@ productStore.fill();
 </template>
 
 <style scoped>
-  .sorteringsNav {
+main {
+  backdrop-filter: blur(10px) !important;
+}
+
+.sorteringsNav {
     display: flex;
   }
 
