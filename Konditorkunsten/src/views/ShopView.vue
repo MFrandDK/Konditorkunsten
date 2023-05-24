@@ -29,11 +29,11 @@ productStore.fill();
         </ul>
       </nav>
       <section class="productContainer">
-        <ProductCard 
-          v-for="product in productStore.products"
-          :key="product.name"
-          :product="product"
-        />
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
       </section>
       <KontaktComponent />
     </main>

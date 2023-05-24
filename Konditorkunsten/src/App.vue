@@ -27,7 +27,7 @@
 --white: #FFFFFF;
 --black: #000000;
 --btn-brown: #8a6758;
---cta-brown: #351404;
+--cta-brown: #4e3428;
 --cta-gold: #F0BD75;
 --footer-bg-beige: #C9BFB6;
 --red-remove: rgb(225, 52, 52);

@@ -1,52 +1,54 @@
 <template>
-    <article class="singleProductContainer">
-        <img src="../assets/pictures/logo-konditorkunsten.png" alt="" loading="lazy">
-        <article class="productInfo">
-            <h3>Kage navn</h3>
-            <button>Se produkt</button>
-        </article>
+  <article class="singleProductContainer">
+    <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
+    <article class="productInfo">
+      <h3>Kage navn</h3>
+      <button class="cakeBtn">Se produkt</button>
     </article>
+  </article>
 </template>
 
 <script>
 export default {
-    name: "ProductInfoCardComponent"
+  name: 'ProductInfoCardComponent'
 }
 </script>
 
 <style scoped>
 .singleProductContainer {
-    width: 20vw;
-    background-color: var(--primary-bg-beige);
-    text-align: center;
+  height: 30vw;
+  width: 20vw;
+  background-color: var(--primary-bg-beige);
+  text-align: center;
 }
 
 img {
-    width: 100%;
-    height: 55%;
-}
-
-button {
-    height: 3vw;
-    width: 10vw;
-    background-color: var(--btn-brown);
-    color: var(--white);
-    border-style: none;
-    border-radius: 15px;
-    font-weight: bold;
-    font-size: 1.2vw;
-}
-
-h3 {
-    font-weight: normal;
+  width: 100%;
+  height: 60%;
 }
 
 .productInfo {
-    height: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40%;
 }
 
+.cakeBtn {
+  height: 3vw;
+  width: 12vw;
+  background-color: var(--btn-brown);
+  color: var(--white);
+  border-style: none;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.3vw;
+  cursor: pointer;
+}
+.cakeBtn:hover {
+  color: var(--cta-brown);
+  background-color: var(--primary-bg-beige);
+  border: 1px solid var(--cta-brown);
+}
 </style>
