@@ -1,20 +1,20 @@
 <template>
   <header id="header">
-    <img src="../assets/pictures/logo-konditorkunsten.png" alt="Konditorkunstens logo" />
+    <router-link to="/"><img class="logo" src="../assets/pictures/logo-konditorkunsten.png" alt="Konditorkunstens logo" /></router-link>
     <nav>
       <RouterLink to="/">Forside</RouterLink>
       <RouterLink to="/about">Shop</RouterLink>
       <RouterLink to="/about">Kurser</RouterLink>
       <RouterLink to="/about">Om os</RouterLink>
       <RouterLink to="/about">Kontakt</RouterLink>
-      <a class="kurv" to="/kurv"
+      <RouterLink class="kurv" to="/kurv"
         ><img
           class="kurvIcon"
           src="../assets/pictures/Shopping-kurv.svg"
           alt="Shopping kurv | Åben kurven" loading="lazy"
         />
         <p class="antalVarerCirkel">10</p>
-      </a>
+      </RouterLink>
     </nav>
   </header>
 </template>
@@ -38,13 +38,17 @@ export default {
 header {
   background-color: var(--primary-bg-beige);
   color: var(--black);
-  width: 100vw;
-  height: 12vw;
+  width: 100%;
+  height: 8vw;
   display: flex;
   border-bottom: .1px solid var(--btn-brown);
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.logo {
+  height: 100%;
 }
 
 nav {
@@ -58,7 +62,6 @@ nav {
 }
 
 nav > * {
-  margin-top: 2.5vw;
   display: flex;
   align-items: center;
   text-decoration: none;

@@ -93,5 +93,6 @@ p{
     text-decoration: underline;
     padding: 1vw 0;
     cursor: pointer;
+    font-size: 1vw;
 }
 </style>

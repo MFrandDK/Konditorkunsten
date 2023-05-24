@@ -4,7 +4,7 @@
             <ul>
                 <a class="removeListStyling" href="tel:+4522425320">
                     <li><h3>KONTAKT</h3></li>
-                    <li>+45 2242 5320</li>
+                    <li>+45 22 42 53 20</li>
                 </a>
             </ul>
 
@@ -35,9 +35,9 @@ export default {
 footer {
     background: var(--footer-bg-beige);
     color: var(--black);
-    width: 100vw;
-    height: auto;
-    padding: 3vw 4vw;
+    height: 10vw;
+    /* width: 100%; */
+    padding: 2vw 4vw;
     border-top: .1px solid var(--btn-brown);
     font-size: 1.25vw;
 }
@@ -61,12 +61,16 @@ nav>* {
 
 ul {
     gap: .5vw;
+    text-align: center;
+}
+
+ul:nth-child(1)>a>li {
+    margin-bottom: .5vw;
 }
 
 ul:nth-child(2) {
     display: flex;
     flex-direction: row;
-    gap: 0 2.5vw;
 }
 
 .smileyIcon {

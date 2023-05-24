@@ -95,7 +95,8 @@ button {
 }
 button:hover {
   color: var(--cta-brown);
-  background-color: var(--white);
+  background-color: var(--secondary-bg-beige);
+  border: 1px solid var(--cta-brown);
 }
 
 </style>

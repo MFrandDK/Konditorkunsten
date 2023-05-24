@@ -32,6 +32,10 @@
 --footer-bg-beige: #C9BFB6;
 }
 
+:hover {
+    translate: .3s ease;
+}
+
 p {
   color: var(--white);
 } 

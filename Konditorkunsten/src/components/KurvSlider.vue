@@ -14,20 +14,20 @@
         <p>TOTAL</p>
         <p>135 KR</p>
       </div>
-      <p>Varen afhentes og betales butikken</p>
+      <p>Varen afhentes og betales i butikken</p>
       <div class="btnContainer">
         <button class="shopVidereBtn">Shop videre</button>
         <button class="bestillingBtn">Gå til bestilling</button>
       </div>
       <p>Har du specielle ønsker?</p>
       <p>Så ring på dette nummer:</p>
-      <a class="removeListStyling" href="tel:+4522425320">+45 2242 5320</a>
+      <a class="removeListStyling" href="tel:+4522425320">+45 22 42 53 20</a>
     </section>
   </aside>
 </template>
 
 <script>
-import ProductInfoCard from './ProductInfoCard.vue'
+import ProductInfoCard from './ProductInfoCard.vue';
 
 export default {
   name: 'KurvSliderComponent',
@@ -38,7 +38,7 @@ export default {
 <style scoped>
 aside {
   position: absolute;
-  height: 90vh;
+  height: 81vh;
   width: 40vw;
   background-color: var(--white);
   right: 0;
@@ -138,6 +138,7 @@ button {
 .shopVidereBtn:hover {
   color: var(--cta-brown);
   background-color: var(--white);
+  border: 1px solid var(--cta-brown);
 }
 
 .bestillingBtn {
@@ -152,8 +153,9 @@ button {
   cursor: pointer;
 }
 .bestillingBtn:hover {
-  color: var(--cta-brown);
+  color: var(--cta-gold);
   background-color: var(--white);
+  border: 1px solid var(--cta-gold);
 }
 
 .checkOutContainer>a {
