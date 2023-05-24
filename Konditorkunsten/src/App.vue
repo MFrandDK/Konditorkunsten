@@ -26,10 +26,11 @@
 --second-bg-beige: #E8E3DD;
 --white: #FFFFFF;
 --black: #000000;
---btn-brown: #9E7E6F;
---cta-brown: #382B25;
+--btn-brown: #8a6758;
+--cta-brown: #351404;
 --cta-gold: #F0BD75;
 --footer-bg-beige: #C9BFB6;
+--red-remove: rgb(225, 52, 52);
 }
 
 :hover {
@@ -37,7 +38,7 @@
 }
 
 p {
-  color: var(--white);
+  color: var(--black);
 } 
 
 .removeListStyling {

@@ -2,11 +2,11 @@
   <header id="header">
     <router-link to="/"><img class="logo" src="../assets/pictures/logo-konditorkunsten.png" alt="Konditorkunstens logo" /></router-link>
     <nav>
-      <RouterLink to="/">Forside</RouterLink>
-      <RouterLink to="/about">Shop</RouterLink>
-      <RouterLink to="/about">Kurser</RouterLink>
-      <RouterLink to="/about">Om os</RouterLink>
-      <RouterLink to="/about">Kontakt</RouterLink>
+      <RouterLink to="/forside">Forside</RouterLink>
+      <RouterLink to="/">Shop</RouterLink>
+      <RouterLink to="/kurser">Kurser</RouterLink>
+      <RouterLink to="/om-os">Om os</RouterLink>
+      <RouterLink to="/kontakt">Kontakt</RouterLink>
       <RouterLink class="kurv" to="/kurv"
         ><img
           class="kurvIcon"

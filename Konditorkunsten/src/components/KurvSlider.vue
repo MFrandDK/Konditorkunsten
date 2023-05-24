@@ -38,7 +38,7 @@ export default {
 <style scoped>
 aside {
   position: absolute;
-  height: 81vh;
+  height: 100vw;
   width: 40vw;
   background-color: var(--white);
   right: 0;

@@ -13,7 +13,7 @@
                     <p>ANTAL</p>
                     <div class="antalProdukterContainer">
                         <a>-</a>
-                        <p class="antalProdukter">1</p>
+                        <p class="antalProdukterBaggrund">1</p>
                         <a>+</a>
                     </div>
                 </div>
@@ -52,10 +52,6 @@ img {
     margin-right: 1vw;
 }
 
-p{
-    color: var(--black);
-}
-
 .infoContainer {
     width: 55%;
     display: flex;
@@ -79,20 +75,25 @@ p{
     display: flex;
     gap: 0 1vw;
 }
-
-.antalProdukter {
+.antalProdukterContainer>a:hover {
+    scale: 1.3;
+    cursor: pointer;
+}
+.antalProdukterBaggrund {
     background-color: var(--second-bg-beige);
     text-align: center;
-    width: 5vw;
+    min-width: 5vw;
     border-radius: 15px;
 }
 
 .fjernProduktKnap {
-    display: flex;
-    flex-direction: row-reverse;
+    margin-left: 92.5%;
     text-decoration: underline;
     padding: 1vw 0;
     cursor: pointer;
     font-size: 1vw;
+}
+.fjernProduktKnap:hover {
+    color: var(--red-remove);
 }
 </style>

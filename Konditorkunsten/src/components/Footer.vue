@@ -71,6 +71,7 @@ ul:nth-child(1)>a>li {
 ul:nth-child(2) {
     display: flex;
     flex-direction: row;
+    gap: 0 2vw;
 }
 
 .smileyIcon {
