@@ -6,8 +6,17 @@ import KontaktComponent from '../components/KontaktComponent.vue'
 import Footer from '../components/Footer.vue'
 
 import { useProductStore } from '@/stores/ProductStore'
-const productStore = useProductStore()
-productStore.fill()
+import { onMounted, computed } from 'vue'
+const store = useProductStore();
+const getProducts = computed(() => {
+  return store.getProducts;
+});
+const products = computed(() => {
+  return store.products;
+});
+onMounted(() => {
+  store.fetchProducts();
+});
 </script>
 
 <template>
