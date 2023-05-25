@@ -97,6 +97,7 @@ button:hover {
   color: var(--cta-brown);
   background-color: var(--secondary-bg-beige);
   border: 1px solid var(--cta-brown);
+  transition: .2s;
 }
 
 </style>

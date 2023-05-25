@@ -140,6 +140,7 @@ form>input {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
+  transition: .2s;
 }
 
 .bestillingBtn {
@@ -157,6 +158,7 @@ form>input {
   color: var(--cta-gold);
   background-color: var(--white);
   border: 1px solid var(--cta-gold);
+  transition: .2s;
 }
 
 .checkOutContainer > a {

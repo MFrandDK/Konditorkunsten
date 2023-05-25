@@ -71,6 +71,12 @@ a {
   color: var(--black);
 }
 
+a:hover {
+  color: var(--white);
+  scale: 1.2;
+  transition: .2s;
+}
+
 .kurv {
   position: relative;
 }
@@ -78,6 +84,10 @@ a {
 .kurvIcon {
   width: 2.5vw;
   cursor: pointer;
+}
+.kurvIcon:hover {
+  filter: invert(100%) sepia(2%) saturate(208%) hue-rotate(73deg) brightness(116%) contrast(100%);
+  transition: .2s;
 }
 
 .antalVarerCirkel {

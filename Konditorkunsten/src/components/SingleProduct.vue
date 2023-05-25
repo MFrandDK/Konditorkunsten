@@ -82,6 +82,7 @@ article {
 .antalProdukterContainer > a:hover {
   scale: 1.3;
   cursor: pointer;
+  transition: .2s;
 }
 
 .antalProdukterBaggrund {
@@ -106,5 +107,6 @@ article {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
+  transition: .2s;
 }
 </style>

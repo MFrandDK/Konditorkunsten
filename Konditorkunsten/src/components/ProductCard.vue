@@ -3,7 +3,7 @@
     <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
     <article class="productInfo">
       <h3>Kage navn</h3>
-      <button class="cakeBtn">Se produkt</button>
+      <RouterLink to="/Produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
     </article>
   </article>
 </template>
@@ -50,5 +50,6 @@ img {
   color: var(--cta-brown);
   background-color: var(--primary-bg-beige);
   border: 1px solid var(--cta-brown);
+  transition: .2s;
 }
 </style>

@@ -78,6 +78,7 @@ img {
 .antalProdukterContainer>a:hover {
     scale: 1.3;
     cursor: pointer;
+    transition: .2s;
 }
 .antalProdukterBaggrund {
     background-color: var(--second-bg-beige);
@@ -95,5 +96,6 @@ img {
 }
 .fjernProduktKnap:hover {
     color: var(--red-remove);
+    transition: .2s;
 }
 </style>

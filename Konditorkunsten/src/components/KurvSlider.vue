@@ -139,6 +139,7 @@ button {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
+  transition: .2s;
 }
 
 .bestillingBtn {
@@ -156,6 +157,7 @@ button {
   color: var(--cta-gold);
   background-color: var(--white);
   border: 1px solid var(--cta-gold);
+  transition: .2s;
 }
 
 .checkOutContainer>a {
