@@ -65,7 +65,7 @@ p {
 }
 
 main {
-  height: 90vw;
+  height: 70vw;
   width: 100%;
   display: flex;
 }

@@ -2,7 +2,7 @@
     <article class="productContainer">
         <h3>Kage navn</h3>
         <div class="innerProductContainer">
-            <img src="../assets/pictures/logo-konditorkunsten.png" alt="" loading="lazy">
+            <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy">
             <article class="infoContainer">
                 <div>
                     <p>PRIS</p>
@@ -38,9 +38,9 @@ export default {
 }
 
 h3 {
-    font-size: 2vw;
+    font-size: 2.5vw;
     font-weight: normal;
-    margin-bottom: 1vw;
+    margin: 1vw;
 }
 
 .innerProductContainer{
