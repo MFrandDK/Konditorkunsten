@@ -1,11 +1,24 @@
+<script setup>
+
+import { useProductStore } from '@/stores/ProductStore'
+import { onMounted, computed } from 'vue'
+const store = useProductStore();
+const getProducts = computed(() => {
+  return store.getProducts;
+});
+const products = computed(() => {
+  return store.products;
+});
+
+</script>
 <template>
-  <section>
+  <section >
     <img
       src="../assets/pictures/ChokoladeCheesecake.jpg"
       alt="Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts."
     />
-    <article>
-      <h1 class="kageNavn">Kage navn</h1>
+    <article >
+      <h1 class="kageNavn">KAGE NAVN</h1>
       <p class="kageBeskrivelse">
         Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust
         Oreo og pyntet med ristede peanuts.

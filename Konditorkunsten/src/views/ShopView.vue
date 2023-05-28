@@ -39,10 +39,7 @@ onMounted(() => {
       </nav>
       <section class="productContainer">
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        
       </section>
       <KontaktComponent />
     </main>

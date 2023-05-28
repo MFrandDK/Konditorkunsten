@@ -1,8 +1,21 @@
+<script setup>
+
+import { useProductStore } from '@/stores/ProductStore'
+import { onMounted, computed } from 'vue'
+const store = useProductStore();
+const getProducts = computed(() => {
+  return store.getProducts;
+});
+const products = computed(() => {
+  return store.products;
+});
+
+</script>
 <template>
-  <article class="singleProductContainer">
+  <article class="singleProductContainer" v-for="product in products" :key="product.id" >
     <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
     <article class="productInfo">
-      <h3>Kage navn</h3>
+      <h3 >{{product.name}}</h3>
       <RouterLink to="/Produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
     </article>
   </article>
