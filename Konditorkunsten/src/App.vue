@@ -21,6 +21,20 @@
   padding: 0;
 }
 
+main {
+    font-family: 'Playfair Display', Serif;
+    min-height: 100vh;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+button {
+    font-family: 'Lato', sans-serif;
+}
+
 :root {
 --primary-bg-beige: #E2D9D2;
 --second-bg-beige: #E8E3DD;

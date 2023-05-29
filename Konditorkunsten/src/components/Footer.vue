@@ -86,8 +86,15 @@ ul:nth-child(2) {
     cursor: pointer;
 }
 
+.smileyIcon:hover,
+.mapIcon:hover {
+    filter: invert(100%) sepia(2%) saturate(208%) hue-rotate(73deg) brightness(116%) contrast(100%);
+    transition: .2s;
+}
+
 a>*:hover {
     color: var(--white);
+    transition: .2s;
 }
 
 

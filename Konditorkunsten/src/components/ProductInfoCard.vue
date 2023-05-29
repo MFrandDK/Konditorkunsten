@@ -6,14 +6,14 @@
             <article class="infoContainer">
                 <div>
                     <p>PRIS</p>
-                    <p>73 KR</p>
+                    <p class="lato">73 KR</p>
                 </div>
                 <div class="lineBreak"></div>
                 <div>
                     <p>ANTAL</p>
                     <div class="antalProdukterContainer">
                         <a>-</a>
-                        <p class="antalProdukterBaggrund">1</p>
+                        <p class="antalProdukterBaggrund lato">1</p>
                         <a>+</a>
                     </div>
                 </div>
@@ -32,15 +32,15 @@ export default {
 <style scoped>
 .productContainer {
     width: 100%;
-    padding: 1.5vw;
-    border-bottom: .1px solid var(--primary-bg-beige);
+    padding: 3vw;
+    border-bottom: 2px solid var(--primary-bg-beige);
     color: var(--black);
 }
 
 h3 {
     font-size: 2.5vw;
     font-weight: normal;
-    margin: 1vw;
+    margin: 2vw 0;
 }
 
 .innerProductContainer{
@@ -50,6 +50,7 @@ h3 {
 img {
     width: 45%;
     margin-right: 1vw;
+    border: .1px solid var(--second-bg-beige);
 }
 
 .infoContainer {
@@ -67,7 +68,7 @@ img {
 }
 
 .lineBreak {
-    border-bottom: .1px solid var(--primary-bg-beige);
+    border-bottom: .1px solid var(--second-bg-beige);
 }
 
 .antalProdukterContainer {

@@ -12,19 +12,12 @@ import Footer from '../components/Footer.vue'
         <ProductInfoCard />
         <ProductInfoCard />
         <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
       </section>
 
       <section class="checkOutContainer">
         <div class="totalPrisContainer">
           <p>TOTAL</p>
-          <p>135 KR</p>
+          <p class="lato">135 KR</p>
         </div>
         <p>Varen afhentes og betales i butikken</p>
 
@@ -45,13 +38,13 @@ import Footer from '../components/Footer.vue'
 
           <div class="btnContainer">
             <button class="shopVidereBtn">Shop videre</button>
-            <input type="submit" name="submitButton" value="Udfør bestilling" class="bestillingBtn" Gå til bestilling />
+            <input type="submit" name="submitButton" value="Udfør bestilling" class="lato bestillingBtn" Gå til bestilling />
           </div>
         </form>
 
         <p>Har du specielle ønsker?</p>
         <p>Så ring på dette nummer</p>
-        <p>↓</p>
+        <p class="arrow">↓</p>
         <a class="removeListStyling" href="tel:+4522425320">+45 22 42 53 20</a>
       </section>
     </main>
@@ -65,23 +58,24 @@ p {
 }
 
 main {
-  height: 70vw;
+  /* height: 70vw; */
   width: 100%;
   display: flex;
 }
 
 .kurvContainer > section {
   width: 50vw;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 12px;
+  width: .7vw;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: rgba(56, 43, 37, 100%);
+  border-radius: 8px;
+  background-color: rgba(232, 227, 221, 1);
   -webkit-box-shadow: 0 0 1px rgba(56, 43, 37, 100%);
+  border: .1px solid #939393;
 }
 
 .checkOutContainer {
@@ -167,5 +161,9 @@ form>input {
   cursor: pointer;
   border: 1px solid var(--second-bg-beige);
   border-radius: 15px;
+}
+
+.arrow {
+  font-family: none;
 }
 </style>

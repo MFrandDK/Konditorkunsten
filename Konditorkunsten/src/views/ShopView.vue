@@ -24,7 +24,7 @@ productStore.fill()
         </ul>
         <ul class="navSorteringsContainerTwo">
           <li><a class="sorteringsBtn" href="#">Sorter efter:</a></li>
-          <li><a class="udvalgBtn">Pris</a></li>
+          <li><a class="sorteringsBtn">Pris</a></li>
           <li class="arrowDown"><a>▶</a></li>
         </ul>
       </nav>
@@ -46,7 +46,7 @@ productStore.fill()
   display: flex;
 }
 
-.sorteringsNav>*>*>* {
+.sorteringsNav > * > * > * {
   color: var(--cta-brown);
 }
 
@@ -61,6 +61,23 @@ productStore.fill()
   font-size: 1.2vw;
 }
 
+.udvalgBtn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.3vw;
+  padding: 0.5vw;
+  color: var(--cta-brown);
+  border: 0.1px solid var(--cta-brown);
+  border-radius: 10px;
+}
+.udvalgBtn:hover {
+  transition: 0.2s ease;
+  cursor: pointer;
+  background-color: var(--cta-brown);
+  color: var(--white);
+}
+
 .navSorteringsContainerTwo {
   width: 30%;
   height: 8vw;
@@ -73,20 +90,9 @@ productStore.fill()
   gap: 0 1.5vw;
 }
 
-.sorteringsContainer > li {
-  width: auto;
-}
-
-.udvalgBtn {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 1.3vw;
-}
-
 .arrowDown {
-  
   rotate: 90deg;
+  cursor: pointer;
 }
 
 .sorteringsBtn {
@@ -95,14 +101,6 @@ productStore.fill()
   text-decoration: none;
   gap: 0 2vw;
   font-size: 1.3vw;
-}
-
-.udvalgBtn:hover,
-.arrowDown>a:hover,
-.sorteringsBtn:hover {
-  scale: 1.1;
-  transition: 0.2s;
-  color: var(--btn-brown);
   cursor: pointer;
 }
 
@@ -113,5 +111,16 @@ productStore.fill()
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5vw 0;
   margin: 5vw 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .productContainer {
+    display: grid;
+    justify-items: center;
+    grid-auto-flow: row;
+    grid-template-columns: 2fr;
+    grid-gap: 5vw 0;
+    margin: 5vw 0;
+  }
 }
 </style>
