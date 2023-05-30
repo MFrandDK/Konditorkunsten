@@ -13,7 +13,7 @@ const products = computed(() => {
 </script>
 <template>
   <article class="singleProductContainer" v-for="product in products" :key="product.id" >
-    <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
+    <img :src="product.imageUrl" alt="" loading="lazy" />
     <article class="productInfo">
       <h3 >{{product.name}}</h3>
       <RouterLink to="/Produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
