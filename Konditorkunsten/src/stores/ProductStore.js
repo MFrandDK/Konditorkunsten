@@ -2,7 +2,7 @@
 import axios from 'axios' //anvender axios library for fetch requests
 import { defineStore } from 'pinia'
 
-
+// inspiration til brug af API via Pinia og axios fra https://blog.logrocket.com/consume-apis-vuex-pinia-axios/#consuming-apis-pinia-axios
 export const useProductStore = defineStore('product', {
   state: () => ({
     
@@ -18,7 +18,7 @@ export const useProductStore = defineStore('product', {
           }
 
         });
-
+        //Product properties via https://woocommerce.github.io/woocommerce-rest-api-docs
         this.products = response.data.map(product => ({ //product images er et array som ligger inde i product array. .map operator skaber en kopi af product array
           ...product, //spread operator for at få adgang til product images
           imageUrl: product.images[0].src //product images gemmes i seperat variabel 
