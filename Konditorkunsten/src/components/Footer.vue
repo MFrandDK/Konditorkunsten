@@ -10,8 +10,8 @@
 
             <ul>
                 <a rel="nofollow" target="_blank" href="https://www.findsmiley.dk/1271351"><li><img class="smileyIcon" src="../assets/pictures/Smiley-icon.svg" alt="Smiley rapport" loading="lazy"></li></a>
-                <a rel="nofollow" target="_blank" href="https://www.facebook.com/people/konditorkunsten/100088804904557/"><i  class="fab fa-2x fa-facebook-f removeListStyling" loading="lazy"></i></a>
-                <a rel="nofollow" target="_blank" href="https://www.instagram.com/konditorkunsten/?fbclid=IwAR2yCbD6OC76Wc9ptlHy88OO6IcO7FiKPc4G720ODnccT_7wuR9G3gP-CpA "><i class="fab fa-2x fa-instagram removeListStyling" loading="lazy"></i></a>
+                <a rel="nofollow" target="_blank" href="https://www.facebook.com/people/konditorkunsten/100088804904557/"><i  class="fab fa-2x fa-facebook-f removeListStyling mobileSize" loading="lazy"></i></a>
+                <a rel="nofollow" target="_blank" href="https://www.instagram.com/konditorkunsten/?fbclid=IwAR2yCbD6OC76Wc9ptlHy88OO6IcO7FiKPc4G720ODnccT_7wuR9G3gP-CpA "><i class="fab fa-2x fa-instagram removeListStyling mobileSize" loading="lazy"></i></a>
                 <a rel="nofollow" target="_blank" href="https://goo.gl/maps/zBkjTqeQsJyt5EvCA"><li><img  class="mapIcon" src="../assets/pictures/Map-icon.svg" alt="Smiley rapport" loading="lazy"></li></a>
             </ul>
 
@@ -97,5 +97,24 @@ a>*:hover {
     transition: .2s;
 }
 
+@media only screen and (max-width: 600px) {
+
+footer {
+    height: 14vw;
+    font-size: 2.2vw;
+}
+
+.smileyIcon {
+    width: 4.8vw;
+}
+
+.mapIcon {
+    width: 3.8vw;
+}
+
+.mobileSize {
+    font-size: 6vw;
+}
+}
 
 </style>

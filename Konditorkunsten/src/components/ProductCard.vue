@@ -63,9 +63,28 @@ h3 {
   transition: .2s;
 }
 
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+  .singleProductContainer {
+    height: 50vw;
+    width: 35vw;
+    border: .1px solid var(--primary-bg-beige);
+    background-color: var(--primary-bg-beige);
+    text-align: center;
+  }
+
   .productInfo {
-  height: 30%;
+  height: 35%;
 }
-} */
+
+h3 {
+  font-size: 3vw;
+}
+
+.cakeBtn {
+  height: 5vw;
+  width: 20vw;
+  font-size: 2.2vw;
+}
+
+}
 </style>

@@ -13,21 +13,30 @@
       <RouterLink to="/om-os">Om os</RouterLink>
       <RouterLink to="/kontakt">Kontakt</RouterLink>
       <RouterLink class="kurv" to="/kurv"
-      ><img
-      class="kurvIcon"
-      src="../assets/pictures/Shopping-kurv.svg"
-      alt="Shopping kurv | Åben kurven"
-      loading="lazy"
-      />
-      <p class="antalVarerCirkel">10</p>
-    </RouterLink>
-    <i class="fas fa-3x fa-bars hiddenOnDesktop"
-      @click=""
-    ></i>
-    <i class="fas fa-4x fa-times hiddenOnDesktop hiddenUntilActive"></i>
-  </nav>
-</header>
-<BurgerMenu class="" />
+        ><img
+          class="kurvIcon"
+          src="../assets/pictures/Shopping-kurv.svg"
+          alt="Shopping kurv | Åben kurven"
+          loading="lazy"
+        />
+        <p class="antalVarerCirkel">10</p>
+      </RouterLink>
+
+      <!-- Inspiration til burger-menu:
+      "https://codepen.io/ysk2645/pen/wvBabpe?editors=1100" -->
+      <button
+        id="brugerMenuBtn"
+        class="hiddenOnDesktop burgerMenuBtn"
+        @click="showBurgerMenu = !showBurgerMenu"
+        :class="{ active: showBurgerMenu }"
+      >
+        <span class="topSpan"></span>
+        <span class="midSpan"></span>
+        <span class="bottomSpan"></span>
+      </button>
+    </nav>
+  </header>
+  <BurgerMenu v-show="showBurgerMenu" />
 </template>
 
 <script>
@@ -39,7 +48,13 @@ import BurgerMenu from './BurgerMenu.vue'
 
 export default {
   name: 'HeaderComponent',
-  components: { BurgerMenu }
+  components: { BurgerMenu },
+
+  data() {
+    return {
+      showBurgerMenu: false
+    }
+  }
 }
 </script>
 
@@ -122,7 +137,8 @@ nav > a:hover {
 @media only screen and (max-width: 600px) {
   header {
     height: 14vw;
-    position: absolute;
+    /* position: absolute; */
+    position: static;
     top: normal;
     z-index: 0;
   }
@@ -130,10 +146,6 @@ nav > a:hover {
   .hiddenOnDesktop {
     display: block;
     font-size: 5vw;
-  }
-
-  .hiddenUntilActive {
-    display: none;
   }
 
   .active {
@@ -148,10 +160,55 @@ nav > a:hover {
     align-items: center;
     width: 100vw;
   }
-  
+
   nav > a {
     display: none;
   }
-  
+
+  .burgerMenuBtn {
+    height: 6vw;
+    width: 5.5vw;
+    display: grid;
+    visibility: visible;
+    left: 0;
+    font-size: 8vw;
+    position: relative;
+  }
+
+  .topSpan,
+  .midSpan,
+  .bottomSpan {
+    background-color: var(--cta-brown);
+    height: 0.7vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    position: absolute;
+    transition: transform 350ms ease-in-out, opacity 80ms linear;
+  }
+
+  .topSpan {
+    top: 10%;
+  }
+  .midSpan {
+    margin: auto 0;
+  }
+
+  .bottomSpan {
+    top: 75%;
+  }
+
+  .burgerMenuBtn.active>.topSpan {
+    transform: rotate(-45deg) translateY(1.2vw) translateX(-1vw);
+  }
+  .burgerMenuBtn.active>.midSpan {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  .burgerMenuBtn.active>.bottomSpan {
+    transform: rotate(45deg) translateY(-1.2vw) translateX(-1vw);
+  }
 }
 </style>
