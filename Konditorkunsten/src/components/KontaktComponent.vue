@@ -114,7 +114,7 @@ button:hover {
   }
 
   p {
-    font-size: 2.2vw;
+    font-size: 2.5vw;
   }
 
   article:nth-child(2) {

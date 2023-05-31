@@ -9,9 +9,9 @@ import Footer from '../components/Footer.vue'
   <body>
     <Header />
     <main>
-     <SingleProduct />
-     <div class="spacerAndBorder"></div>
-     <OtherProductsSection />
+      <SingleProduct />
+      <div class="spacerAndBorder"></div>
+      <OtherProductsSection class="sectionsComponent" />
     </main>
     <Footer />
   </body>
@@ -29,4 +29,9 @@ main {
   margin: 2vw 0 8vw 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .sectionsComponent {
+    margin-top: 5vw;
+  }
+}
 </style>

@@ -166,4 +166,50 @@ form>input {
 .arrow {
   font-family: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .checkOutContainer {
+  font-size: 2.5vw;
+  gap: 4vw 0;
+}
+
+.totalPrisContainer {
+  margin: 3vw 0 0 0;
+  padding: 2vw 3vw;
+  font-size: 3vw;
+}
+
+form {
+  gap: 2vw 0;
+}
+
+form>input {
+  padding: 1.5vw;
+}
+
+.btnContainer {
+flex-direction: column;
+align-items: center;
+gap: 3.5vw;
+}
+
+.shopVidereBtn {
+  height: 6.5vw;
+  width: 30vw;
+  border-radius: 8px;
+  font-size: 2.5vw;
+}
+
+.bestillingBtn {
+  height: 6.5vw;
+  width: 30vw;
+  border-radius: 8px;
+  font-size: 2.5vw;
+}
+
+.checkOutContainer > a {
+  margin-top: 0;
+  padding: 1.2vw;
+}
+}
 </style>

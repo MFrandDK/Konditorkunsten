@@ -12,13 +12,13 @@
       </p>
       <div class="prisContainer">
         <p>PRIS</p>
-        <p>73 KR</p>
+        <p class="lato">73 KR</p>
       </div>
       <div class="antalContainer">
         <p>ANTAL</p>
         <div class="antalProdukterContainer">
           <a>-</a>
-          <p class="antalProdukterBaggrund">1</p>
+          <p class="antalProdukterBaggrund lato">1</p>
           <a>+</a>
         </div>
       </div>
@@ -42,6 +42,7 @@ section {
 
 img {
   width: 30vw;
+  border: 0.1px solid var(--second-bg-beige);
 }
 
 article {
@@ -82,7 +83,7 @@ article {
 .antalProdukterContainer > a:hover {
   scale: 1.3;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .antalProdukterBaggrund {
@@ -90,6 +91,7 @@ article {
   text-align: center;
   min-width: 5vw;
   border-radius: 15px;
+  justify-items: center;
 }
 
 .tilføjTilKurvBtn {
@@ -107,6 +109,47 @@ article {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
-  transition: .2s;
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    min-height: 70vw;
+    gap: 0 8vw;
+    margin: 5vw;
+    align-items: center;
+  }
+
+  img {
+    height: 55vw;
+  }
+
+  .kageNavn {
+    font-size: 4vw;
+  }
+
+  .kageBeskrivelse {
+    width: 45vw;
+    font-size: 2.5vw;
+  }
+
+  .prisContainer {
+    font-size: 3vw;
+  }
+
+  .antalContainer {
+    font-size: 3vw;
+  }
+
+  .antalProdukterContainer {
+    font-size: 3vw;
+  }
+
+  .tilføjTilKurvBtn {
+    height: 6.5vw;
+    width: 30vw;
+    border-radius: 8px;
+    font-size: 2.5vw;
+  }
 }
 </style>

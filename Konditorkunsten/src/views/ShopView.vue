@@ -110,6 +110,13 @@ productStore.fill()
   padding: 0.5vw 1vw;
 }
 
+.btnBorder:hover {
+  transition: 0.2s ease;
+  cursor: pointer;
+  background-color: var(--cta-brown);
+  color: var(--white);
+}
+
 .productContainer {
   display: grid;
   justify-items: center;

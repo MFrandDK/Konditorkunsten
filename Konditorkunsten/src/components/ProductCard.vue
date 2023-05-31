@@ -81,9 +81,10 @@ h3 {
 }
 
 .cakeBtn {
-  height: 5vw;
+  height: 5.5vw;
   width: 20vw;
-  font-size: 2.2vw;
+  font-size: 2.5vw;
+  border-radius: 8px;
 }
 
 }

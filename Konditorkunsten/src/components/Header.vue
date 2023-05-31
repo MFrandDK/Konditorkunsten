@@ -1,5 +1,6 @@
 <template>
-  <header id="header">
+  <header id="header"
+  @wheel.prevent @touchmove.prevent @scroll.prevent >
     <router-link to="/"
       ><img
         class="logo"
@@ -36,7 +37,9 @@
       </button>
     </nav>
   </header>
-  <BurgerMenu v-show="showBurgerMenu" />
+  <!-- Inspiration til at deaktivere scroll på component:
+  "https://stackoverflow.com/questions/56739111/prevent-scrolling-in-vuejs" -->
+  <BurgerMenu v-show="showBurgerMenu" @wheel.prevent @touchmove.prevent @scroll.prevent />
 </template>
 
 <script>
@@ -99,7 +102,7 @@ nav > * {
 }
 
 a {
-  color: var(--black);
+  color: var(--cta-brown);
 }
 
 nav > a:hover {
@@ -115,6 +118,7 @@ nav > a:hover {
 .kurvIcon {
   width: 2.5vw;
   cursor: pointer;
+  filter: invert(8%) sepia(13%) saturate(2610%) hue-rotate(335deg) brightness(96%) contrast(89%);
 }
 .kurvIcon:hover {
   filter: invert(100%) sepia(2%) saturate(208%) hue-rotate(73deg) brightness(116%) contrast(100%);
@@ -180,6 +184,8 @@ nav > a:hover {
   .bottomSpan {
     background-color: var(--cta-brown);
     height: 0.7vw;
+    /* width: 50%; */
+    margin: 0 auto;
     top: 0;
     bottom: 0;
     left: 0;
@@ -193,22 +199,26 @@ nav > a:hover {
     top: 10%;
   }
   .midSpan {
-    margin: auto 0;
+    top: 43%;
   }
 
   .bottomSpan {
-    top: 75%;
+    top: 76%;
   }
 
-  .burgerMenuBtn.active>.topSpan {
+  .burgerMenuBtn.active > .topSpan {
     transform: rotate(-45deg) translateY(1.2vw) translateX(-1vw);
+    /* width: 35%; */
+    border-radius: 8px;
   }
-  .burgerMenuBtn.active>.midSpan {
+  .burgerMenuBtn.active > .midSpan {
     transform: rotate(90deg);
     opacity: 0;
   }
-  .burgerMenuBtn.active>.bottomSpan {
+  .burgerMenuBtn.active > .bottomSpan {
     transform: rotate(45deg) translateY(-1.2vw) translateX(-1vw);
+    /* width: 35%; */
+    border-radius: 8px;
   }
 }
 </style>

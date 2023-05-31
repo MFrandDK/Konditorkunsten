@@ -100,8 +100,8 @@ a>*:hover {
 @media only screen and (max-width: 600px) {
 
 footer {
-    height: 14vw;
-    font-size: 2.2vw;
+    height: auto;
+    font-size: 2.5vw;
 }
 
 .smileyIcon {
