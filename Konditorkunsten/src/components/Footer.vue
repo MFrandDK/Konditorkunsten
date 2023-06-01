@@ -10,15 +10,16 @@
 
             <ul>
                 <a rel="nofollow" target="_blank" href="https://www.findsmiley.dk/1271351"><li><img class="smileyIcon" src="../assets/pictures/Smiley-icon.svg" alt="Smiley rapport" loading="lazy"></li></a>
-                <a rel="nofollow" target="_blank" href="https://www.facebook.com/people/konditorkunsten/100088804904557/"><i  class="fab fa-2x fa-facebook-f removeListStyling mobileSize" loading="lazy"></i></a>
-                <a rel="nofollow" target="_blank" href="https://www.instagram.com/konditorkunsten/?fbclid=IwAR2yCbD6OC76Wc9ptlHy88OO6IcO7FiKPc4G720ODnccT_7wuR9G3gP-CpA "><i class="fab fa-2x fa-instagram removeListStyling mobileSize" loading="lazy"></i></a>
+                <a rel="nofollow" target="_blank" href="https://www.facebook.com/people/konditorkunsten/100088804904557/"><i  class="fab fa-2x fa-facebook removeListStyling mobileSize" loading="lazy"></i></a>
+                <a class="removeListStyling" rel="nofollow" target="_blank" href="https://www.instagram.com/konditorkunsten/?fbclid=IwAR2yCbD6OC76Wc9ptlHy88OO6IcO7FiKPc4G720ODnccT_7wuR9G3gP-CpA "><i class="fab fa-instagram removeListStyling" loading="lazy"></i></a>
                 <a rel="nofollow" target="_blank" href="https://goo.gl/maps/zBkjTqeQsJyt5EvCA"><li><img  class="mapIcon" src="../assets/pictures/Map-icon.svg" alt="Smiley rapport" loading="lazy"></li></a>
             </ul>
 
             <ul>
                 <li><h3>ÅBNINGSTIDER</h3></li>
-                <li><p>07 - 16</p></li>
-                <li><p>(10 - 14)</p></li>
+                <li><p>Man, Tir, Ons: Lukket</p></li>
+                <li><p>Tor, Fre: 11:00 - 20:00</p></li>
+                <li><p>Lør, Søn: 8:00 - 20:00</p></li>
             </ul>
         </nav>
     </footer>
@@ -35,8 +36,7 @@ export default {
 footer {
     background: var(--footer-bg-beige);
     color: var(--black);
-    height: 10vw;
-    /* width: 100%; */
+    height: auto;
     padding: 2vw 4vw;
     border-top: .1px solid var(--btn-brown);
     font-size: 1.25vw;
@@ -72,6 +72,7 @@ ul:nth-child(2) {
     display: flex;
     flex-direction: row;
     gap: 0 2vw;
+    padding-left: 4vw;
 }
 
 .smileyIcon {
@@ -97,6 +98,24 @@ a>*:hover {
     transition: .2s;
 }
 
+.fa-instagram {
+    border-radius: 100%;
+    text-decoration: none;
+    color: var(--footer-bg-beige);
+    background-color: rgb(0,0,0);
+    padding: 1.3vw;
+    width: 1vw;
+    height: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8vw;
+}
+.fa-instagram:hover {
+    color: var(--footer-bg-beige);
+    background-color: var(--white);
+}
+
 @media only screen and (max-width: 600px) {
 
 footer {
@@ -114,6 +133,14 @@ footer {
 
 .mobileSize {
     font-size: 6vw;
+}
+
+
+.fa-instagram {
+    padding: 3vw;
+    width: 1.5vw;
+    height: 1.5vw;
+    font-size: 4vw;
 }
 }
 

@@ -1,7 +1,18 @@
-<script setup>
-import Header from '../components/Header.vue'
-import ProductInfoCard from '../components/ProductInfoCard.vue'
-import Footer from '../components/Footer.vue'
+<script>
+import Header from '@/components/Header.vue';
+import ProductInfoCard from '@/components/ProductInfoCard.vue';
+import Footer from '@/components/Footer.vue';
+
+import { useCartStore } from '@/stores/CartStore';
+
+export default {
+  setup() {
+    const cartStore = useCartStore();
+    return {
+      cartStore
+    };
+  }
+}
 </script>
 
 <template>
@@ -9,9 +20,7 @@ import Footer from '../components/Footer.vue'
     <Header />
     <main class="kurvContainer">
       <section>
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
+        <ProductInfoCard v-for="item in $cart.items" :key="item.id" :item="item" />
       </section>
 
       <section class="checkOutContainer">
@@ -26,19 +35,22 @@ import Footer from '../components/Footer.vue'
           <input type="text" id="forNavn" name="firstName" placeholder="Dit navn" />
 
           <label for="telefonNummer">Telefonnummer</label>
-          <input
-            type="tel"
-            id="telefonNummer"
-            name="phoneNumber"
-            placeholder="Dit telefonnummer"
-          />
+          <input type="tel" id="telefonNummer" name="phoneNumber" placeholder="Dit telefonnummer" />
 
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" placeholder="E-mail" />
 
           <div class="btnContainer">
             <button class="shopVidereBtn">Shop videre</button>
-            <input type="submit" name="submitButton" value="Udfør bestilling" class="lato bestillingBtn" Gå til bestilling />
+            <input
+              type="submit"
+              name="submitButton"
+              value="Udfør bestilling"
+              class="lato bestillingBtn"
+              Gå
+              til
+              bestilling
+            />
           </div>
         </form>
 
@@ -69,13 +81,13 @@ main {
 }
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: .7vw;
+  width: 0.7vw;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: rgba(232, 227, 221, 1);
   -webkit-box-shadow: 0 0 1px rgba(56, 43, 37, 100%);
-  border: .1px solid #939393;
+  border: 0.1px solid #939393;
 }
 
 .checkOutContainer {
@@ -102,11 +114,11 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: .5vw 0;
+  gap: 0.5vw 0;
   margin-top: 3vw;
 }
 
-form>input {
+form > input {
   padding: 1vw;
   margin-bottom: 2vw;
 }
@@ -134,7 +146,7 @@ form>input {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .bestillingBtn {
@@ -152,7 +164,7 @@ form>input {
   color: var(--cta-gold);
   background-color: var(--white);
   border: 1px solid var(--cta-gold);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .checkOutContainer > a {
@@ -169,47 +181,47 @@ form>input {
 
 @media only screen and (max-width: 600px) {
   .checkOutContainer {
-  font-size: 2.5vw;
-  gap: 4vw 0;
-}
+    font-size: 2.5vw;
+    gap: 4vw 0;
+  }
 
-.totalPrisContainer {
-  margin: 3vw 0 0 0;
-  padding: 2vw 3vw;
-  font-size: 3vw;
-}
+  .totalPrisContainer {
+    margin: 3vw 0 0 0;
+    padding: 2vw 3vw;
+    font-size: 3vw;
+  }
 
-form {
-  gap: 2vw 0;
-}
+  form {
+    gap: 2vw 0;
+  }
 
-form>input {
-  padding: 1.5vw;
-}
+  form > input {
+    padding: 1.5vw;
+  }
 
-.btnContainer {
-flex-direction: column;
-align-items: center;
-gap: 3.5vw;
-}
+  .btnContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5vw;
+  }
 
-.shopVidereBtn {
-  height: 6.5vw;
-  width: 30vw;
-  border-radius: 8px;
-  font-size: 2.5vw;
-}
+  .shopVidereBtn {
+    height: 6.5vw;
+    width: 30vw;
+    border-radius: 8px;
+    font-size: 2.5vw;
+  }
 
-.bestillingBtn {
-  height: 6.5vw;
-  width: 30vw;
-  border-radius: 8px;
-  font-size: 2.5vw;
-}
+  .bestillingBtn {
+    height: 6.5vw;
+    width: 30vw;
+    border-radius: 8px;
+    font-size: 2.5vw;
+  }
 
-.checkOutContainer > a {
-  margin-top: 0;
-  padding: 1.2vw;
-}
+  .checkOutContainer > a {
+    margin-top: 0;
+    padding: 1.2vw;
+  }
 }
 </style>

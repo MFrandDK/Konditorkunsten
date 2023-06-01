@@ -1,8 +1,8 @@
 <script setup>
-import Header from '../components/Header.vue'
-import SingleProduct from '../components/SingleProduct.vue'
-import OtherProductsSection from '../components/OtherProductsSection.vue'
-import Footer from '../components/Footer.vue'
+import Header from '@/components/Header.vue'
+import SingleProduct from '@/components/SingleProduct.vue'
+import OtherProductsSection from '@/components/OtherProductsSection.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <template>

@@ -39,12 +39,12 @@ p {
 section {
   background: var(--primary-bg-beige);
   color: var(--black);
-  padding: 3vw 4vw;
+  padding: 1vw 4vw;
 }
 
 img {
   border-radius: 100%;
-  width: 35vw;
+  width: 40vw;
 }
 
 article:nth-child(1) {
@@ -62,6 +62,10 @@ article:nth-child(1) > div {
 h1 {
   font-size: 3vw;
 }
+
+h2 {
+    font-size: 2vw;
+  }
 
 article:nth-child(1) > div > p {
   margin: 0 auto;

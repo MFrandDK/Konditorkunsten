@@ -17,19 +17,60 @@
       <div class="antalContainer">
         <p>ANTAL</p>
         <div class="antalProdukterContainer">
-          <a>-</a>
-          <p class="antalProdukterBaggrund lato">1</p>
-          <a>+</a>
+          <a @click="removeOneFromCart(item)">-</a>
+          <p class="antalProdukterBaggrund lato">{{ item.quantity }}</p>
+          <a @click="addOneToCart(item)">+</a>
         </div>
       </div>
-      <button class="tilføjTilKurvBtn">Tilføj til kurv</button>
+      <button class="tilføjTilKurvBtn" @click="addToCart(item.productId)">Tilføj til kurv</button>
     </article>
   </section>
 </template>
 
 <script>
+import { useCartStore } from '@/stores/CartStore'
+
 export default {
-  name: 'SingleProduct'
+  name: 'SingleProduct',
+
+  props: {
+    item: Object
+  },
+
+  setup() {
+    const cartStore = useCartStore()
+
+    const addOneToCart = (item) => {
+      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
+      cartStore.addOneItem(1, item)
+    }
+
+    const addToCart = (item) => {
+      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
+      cartStore.addItems(1, item)
+      // Ved brug af "quantity++" burde knappen øge antallet af produktet i komponentets data
+      item.quantity++
+    }
+    // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
+    const removeOneFromCart = (item) => {
+      cartStore.removeOneItem(1, item.productId)
+    }
+
+    const removeFromCart = (item) => {
+      if (item.quantity > 0) {
+        cartStore.removeItems(item.productId)
+        // Ved brug af "quantity--" burde knappen sænke antallet af produktet i komponentets data
+        item.quantity--
+      }
+    }
+
+    return {
+      addOneToCart,
+      addToCart,
+      removeOneFromCart,
+      removeFromCart
+    }
+  }
 }
 </script>
 

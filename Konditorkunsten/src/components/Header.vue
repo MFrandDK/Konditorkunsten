@@ -20,7 +20,7 @@
           alt="Shopping kurv | Åben kurven"
           loading="lazy"
         />
-        <p class="antalVarerCirkel">10</p>
+        <p class="antalVarerCirkel lato">1</p>
       </RouterLink>
 
       <!-- Inspiration til burger-menu:
@@ -88,9 +88,9 @@ nav {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  gap: 0 10%;
+  gap: 0 9%;
   margin-right: 5%;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   font-weight: bold;
   font-weight: 700;
 }
@@ -103,6 +103,10 @@ nav > * {
 
 a {
   color: var(--cta-brown);
+}
+
+.router-link-active {
+  color: var(--white);
 }
 
 nav > a:hover {

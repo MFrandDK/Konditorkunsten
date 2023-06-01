@@ -1,9 +1,9 @@
 <script setup>
-import Header from '../components/Header.vue'
+import Header from '@/components/Header.vue'
 // import KurvSlider from '../components/KurvSlider.vue';
-import ProductCard from '../components/ProductCard.vue'
-import KontaktComponent from '../components/KontaktComponent.vue'
-import Footer from '../components/Footer.vue'
+import ProductCard from '@/components/ProductCard.vue'
+import KontaktComponent from '@/components/KontaktComponent.vue'
+import Footer from '@/components/Footer.vue'
 
 import { useProductStore } from '@/stores/ProductStore'
 const productStore = useProductStore()

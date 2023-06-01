@@ -12,20 +12,57 @@
         <div>
           <p>ANTAL</p>
           <div class="antalProdukterContainer">
-            <a>-</a>
+            <!-- VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce -->
+            <a @click="removeFromCart(item.productId)">-</a>
             <p class="antalProdukterBaggrund lato">1</p>
-            <a>+</a>
+            <a @click="addToCart(item.productId)">+</a>
           </div>
         </div>
       </article>
     </div>
-    <a class="fjernProduktKnap">FJERN</a>
+    <!-- VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce -->
+    <a class="fjernProduktKnap" @click="removeFromCart(item.productId)">FJERN</a>
   </article>
 </template>
 
 <script>
+import { useCartStore } from '@/stores/CartStore'
+
 export default {
-  name: 'ProductCardComponent'
+  name: 'ProductCardComponent',
+
+  props: {
+    item: Object
+  },
+
+  setup() {
+    const cartStore = useCartStore()
+
+    const addOneToCart = (item) => {
+      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
+      cartStore.addOneItem(1, item.productId)
+    }
+    
+    const addToCart = (item) => {
+      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
+      cartStore.addItems(item.quantity, item.productId)
+    }
+    // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
+    const removeOneFromCart = (item) => {
+      cartStore.removeOneItem(1, item.productId)
+    }
+    
+    const removeFromCart = (item) => {
+      cartStore.removeItems(item.quantity, item.productId)
+    }
+
+    return {
+      addOneToCart,
+      addToCart,
+      removeOneFromCart,
+      removeFromCart
+    }
+  }
 }
 </script>
 
@@ -116,8 +153,8 @@ img {
   }
 
   .infoContainer {
-  width: 65%;
-}
+    width: 65%;
+  }
 
   .infoContainer > div {
     font-size: 2.5vw;
