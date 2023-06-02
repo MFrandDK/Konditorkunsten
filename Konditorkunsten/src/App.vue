@@ -20,7 +20,7 @@
 }
 
 main {
-    font-family: 'Playfair Display', Serif;
+    font-family: 'lora', Serif;
     min-height: 100vh;
 }
 
@@ -43,6 +43,7 @@ button {
 --cta-gold: #F0BD75;
 --footer-bg-beige: #C9BFB6;
 --red-remove: rgb(225, 52, 52);
+--nav-active: #90552c;
 }
 
 :hover {

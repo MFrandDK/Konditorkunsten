@@ -66,7 +66,7 @@ header {
   background-color: var(--primary-bg-beige);
   color: var(--black);
   width: 100%;
-  height: 8vw;
+  height: 9.5vw;
   display: flex;
   border-bottom: 0.1px solid var(--btn-brown);
   position: absolute;
@@ -93,6 +93,7 @@ nav {
   font-size: 1.4vw;
   font-weight: bold;
   font-weight: 700;
+  font-family: 'lora', serif;
 }
 
 nav > * {
@@ -106,11 +107,11 @@ a {
 }
 
 .router-link-active {
-  color: var(--white);
+  color: var(--btn-brown);
 }
 
 nav > a:hover {
-  color: var(--white);
+  color: var(--nav-active);
   scale: 1.2;
   transition: 0.2s;
 }

@@ -20,7 +20,7 @@ export default {
     <Header />
     <main class="kurvContainer">
       <section>
-        <ProductInfoCard v-for="item in $cart.items" :key="item.id" :item="item" />
+        <!-- <ProductInfoCard v-for="item in $cart.items" :key="item.id" :item="item" /> -->
       </section>
 
       <section class="checkOutContainer">

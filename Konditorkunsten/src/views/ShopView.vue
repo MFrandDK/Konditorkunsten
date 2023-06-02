@@ -58,14 +58,14 @@ productStore.fill()
   align-items: center;
   border-bottom: 0.1px solid var(--primary-bg-beige);
   list-style: none;
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 
 .udvalgBtn {
   display: flex;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.3vw;
+  font-size: 1vw;
   padding: 0.5vw;
   color: var(--cta-brown);
   border: 0.1px solid var(--cta-brown);
@@ -86,7 +86,7 @@ productStore.fill()
   align-items: center;
   border-bottom: 0.1px solid var(--primary-bg-beige);
   list-style: none;
-  font-size: 1.2vw;
+  font-size: 1vw;
   gap: 0 1.5vw;
 }
 
@@ -100,7 +100,7 @@ productStore.fill()
   justify-content: center;
   text-decoration: none;
   gap: 0 2vw;
-  font-size: 1.3vw;
+  font-size: 1vw;
   cursor: pointer;
 }
 
