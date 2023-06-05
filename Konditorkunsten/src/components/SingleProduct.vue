@@ -1,16 +1,20 @@
-<script setup>
+<!-- <script setup>
+import { useProductStore } from '@/stores/ProductStore';
+import { computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
-import { useProductStore } from '@/stores/ProductStore'
-import { onMounted, computed } from 'vue'
 const store = useProductStore();
-const getProducts = computed(() => {
-  return store.getProducts;
-});
-const products = computed(() => {
-  return store.products;
-});
+const route = useRoute();
+const productId = computed(() => route.params.id);
+const product = computed(() => store.getProductbyId(productId.value));
 
-</script>
+onMounted(() => {
+  if (!product.value) {
+    store.fetchProductById(productId.value);
+  }
+});
+</script> -->
+
 <template>
   <section >
     <img
@@ -41,9 +45,17 @@ const products = computed(() => {
 </template>
 
 <script>
+
 export default {
-  name: 'SingleProduct'
-}
+  name: 'SingleProduct',
+  props: {
+    productId: {
+      type: String,
+      required: true,
+    }
+  }
+  
+  }
 </script>
 
 <style scoped>

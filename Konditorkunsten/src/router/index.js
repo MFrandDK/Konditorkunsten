@@ -12,9 +12,10 @@ const router = createRouter({
       component: ShopView
     },
     {
-      path: '/produkt',
-      name: 'produkt',
-      component: ProduktView
+      path: '/product/:id',
+      name: 'product',
+      component: ProduktView,
+      props: true
     },
     {
       path: '/kurv',

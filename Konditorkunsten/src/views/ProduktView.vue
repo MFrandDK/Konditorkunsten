@@ -4,25 +4,28 @@ import SingleProduct from '../components/SingleProduct.vue'
 import OtherProductsSection from '../components/OtherProductsSection.vue'
 import Footer from '../components/Footer.vue'
 
-import { useProductStore } from '@/stores/ProductStore'
-import { onMounted, computed } from 'vue'
+import { useProductStore } from '@/stores/ProductStore';
+import { computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
 const store = useProductStore();
-const getProducts = computed(() => {
-  return store.getProducts;
-});
-const products = computed(() => {
-  return store.products;
-});
+const route = useRoute();
+const productId = computed(() => route.params.id);
+const product = computed(() => store.getProductbyId(productId.value));
+
 onMounted(() => {
-  store.fetchProducts();
+  if (!product.value) {
+    store.fetchProductById(productId.value);
+  }
 });
+
 </script>
 
 <template>
   <body>
     <Header />
     <main>
-     <SingleProduct />
+     <SingleProduct :productId="productId"/>
      <div class="spacerAndBorder"></div>
      <OtherProductsSection />
     </main>
