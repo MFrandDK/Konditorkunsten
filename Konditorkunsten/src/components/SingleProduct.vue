@@ -17,19 +17,13 @@ onMounted(() => {
 
 <template>
   <section>
-    <img
-      src="../assets/pictures/ChokoladeCheesecake.jpg"
-      alt="Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts."
-    />
+    <img :src="product.imageUrl" alt="" loading="lazy" />
     <article>
-      <h1 class="kageNavn">{{product.name}}</h1>
-      <p class="kageBeskrivelse">
-        Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust
-        Oreo og pyntet med ristede peanuts.
-      </p>
+      <h1 class="kageNavn">{{ product.name }}</h1>
+      <p class="kageBeskrivelse">{{ product.description }}</p>
       <div class="prisContainer">
         <p>PRIS</p>
-        <p>{{product.price}} KR</p>
+        <p>{{ product.price }} KR</p>
       </div>
       <div class="antalContainer">
         <p>ANTAL</p>
@@ -45,7 +39,6 @@ onMounted(() => {
 </template>
 
 <script>
-  
 export default {
   name: 'SingleProduct',
   props: {
