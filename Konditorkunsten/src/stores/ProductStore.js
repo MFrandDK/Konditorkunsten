@@ -5,7 +5,6 @@ import { defineStore } from 'pinia'
 // inspiration til brug af API via Pinia og axios fra https://blog.logrocket.com/consume-apis-vuex-pinia-axios/#consuming-apis-pinia-axios
 export const useProductStore = defineStore('product', {
   state: () => ({
-
     products: [],
     productById: {},
   }),
@@ -49,7 +48,9 @@ export const useProductStore = defineStore('product', {
           };
         }
         this.products = updatedProducts;
-        console.log(response.data)
+        console.log(product)
+
+        return product
       } catch (error) {
         alert(error)
         console.log(error)
@@ -61,6 +62,10 @@ export const useProductStore = defineStore('product', {
       return state.products
     },
     getProductbyId: (state) => (id) => {
+      if ((state.products.find((product) => {product.id === id})) == undefined) {
+        console.log("Could not find product of id: ", id);
+    }
+      console.log();
       return state.products.find((product) => product.id === id);
     }
   },

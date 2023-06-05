@@ -16,20 +16,20 @@ onMounted(() => {
 </script> -->
 
 <template>
-  <section >
+  <section>
     <img
       src="../assets/pictures/ChokoladeCheesecake.jpg"
       alt="Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts."
     />
-    <article >
-      <h1 class="kageNavn">KAGE NAVN</h1>
+    <article>
+      <h1 class="kageNavn">{{product.name}}</h1>
       <p class="kageBeskrivelse">
         Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust
         Oreo og pyntet med ristede peanuts.
       </p>
       <div class="prisContainer">
         <p>PRIS</p>
-        <p>73 KR</p>
+        <p>{{product.price}} KR</p>
       </div>
       <div class="antalContainer">
         <p>ANTAL</p>
@@ -45,17 +45,20 @@ onMounted(() => {
 </template>
 
 <script>
-
+  
 export default {
   name: 'SingleProduct',
   props: {
     productId: {
       type: String,
-      required: true,
+      required: true
+    },
+    product: {
+      product: Object,
+      required: true
     }
   }
-  
-  }
+}
 </script>
 
 <style scoped>
@@ -107,7 +110,7 @@ article {
 .antalProdukterContainer > a:hover {
   scale: 1.3;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .antalProdukterBaggrund {
@@ -132,6 +135,6 @@ article {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
-  transition: .2s;
+  transition: 0.2s;
 }
 </style>
