@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
   <section>
-    <img :src="product.imageUrl" alt="" loading="lazy" />
+    <img :src="product.images[0].src" alt="" loading="lazy" />
     <article>
       <h1 class="kageNavn">{{ product.name }}</h1>
       <p class="kageBeskrivelse">{{ product.description }}</p>
@@ -62,6 +62,7 @@ section {
 }
 
 img {
+  height: 41vw;
   width: 30vw;
 }
 

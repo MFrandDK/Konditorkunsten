@@ -43,9 +43,11 @@ export const useProductStore = defineStore('product', {
         const index = updatedProducts.findIndex((p) => p.id === product.id);
         if (index !== -1) {
           updatedProducts[index] = {
-            ...product, imageUrl: product.images[0].src
+            ...product, 
+            imageUrl: product.images[0].src
           };
         }
+        console.log('imgTest', product.images[0].src);
         this.products = updatedProducts;
         console.log(product)
 
