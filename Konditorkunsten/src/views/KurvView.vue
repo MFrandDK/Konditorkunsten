@@ -2,6 +2,32 @@
 import Header from '../components/Header.vue'
 import ProductInfoCard from '../components/ProductInfoCard.vue'
 import Footer from '../components/Footer.vue'
+
+// import { useCartStore } from '@/stores/CartStore';
+import { useProductStore } from '@/stores/ProductStore';
+import { computed, ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+// const cart = useCartStore();
+
+const store = useProductStore();
+const route = useRoute();
+const productId = computed(() => route.params.id);
+const dataLoaded = ref(false)
+const propValue = ref(null)
+
+onMounted(async () => {
+      try {
+        // let state = this.state.first
+        const result = await store.fetchProductById(productId.value);
+        propValue.value = result;
+        dataLoaded.value = true;
+        console.log(propValue.value.name);
+        // console.log("state", store.getters.getProducts(state));
+      } catch (error) {
+        console.error(error);
+      }
+    });
 </script>
 
 <template>
@@ -9,16 +35,7 @@ import Footer from '../components/Footer.vue'
     <Header />
     <main class="kurvContainer">
       <section>
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
-        <ProductInfoCard />
+        <ProductInfoCard v-if="dataLoaded"  :productId="productId" :product="propValue" />
       </section>
 
       <section class="checkOutContainer">

@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
   <section>
-    <img :src="product.images[0].src" alt="" loading="lazy" />
+    <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
     <article>
       <h1 class="kageNavn">{{ product.name }}</h1>
       <p class="kageBeskrivelse">{{ product.description }}</p>
@@ -40,7 +40,7 @@ onMounted(() => {
 
 <script>
 export default {
-  name: 'SingleProduct',
+  name: "SingleProduct",
   props: {
     productId: {
       type: String,

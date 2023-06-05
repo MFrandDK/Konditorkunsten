@@ -1,19 +1,19 @@
 <template>
     <article class="productContainer">
-        <h3>Kage navn</h3>
+        <h3>Kage navn {{  }}</h3>
         <div class="innerProductContainer">
             <img src="../assets/pictures/logo-konditorkunsten.png" alt="" loading="lazy">
             <article class="infoContainer">
                 <div>
                     <p>PRIS</p>
-                    <p>73 KR</p>
+                    <p>{{  }} KR</p>
                 </div>
                 <div class="lineBreak"></div>
                 <div>
                     <p>ANTAL</p>
                     <div class="antalProdukterContainer">
                         <a>-</a>
-                        <p class="antalProdukterBaggrund">1</p>
+                        <p class="antalProdukterBaggrund">{{  }}</p>
                         <a>+</a>
                     </div>
                 </div>
@@ -25,9 +25,20 @@
 
 <script>
 export default {
-    name: "ProductCardComponent"
+    name: "ProductCardComponent",
+    props: {
+    productId: {
+      type: String,
+      required: true
+    },
+    product: {
+      product: Object,
+      required: true
+    }
+  }
 }
 </script>
+
 
 <style scoped>
 .productContainer {
