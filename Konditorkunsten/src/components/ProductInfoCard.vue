@@ -1,7 +1,7 @@
 <template>
     <!-- Nedenfor benyttes v-if, for at kontrollere om productInfo er defineret -->
   <article v-if="productInfo" class="productContainer">
-    <h3>Kage navn {{ productInfo.name }}</h3>
+    <h3>{{ productInfo.name }}</h3>
     <div class="innerProductContainer">
       <img
         :src="productInfo.images[0].src"
