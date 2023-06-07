@@ -31,6 +31,7 @@ export default {
       const cartStore = useCartStore();
       // Logikken nedenfor er lavet som computed, fordi Vue derved automatisk overvåger cartStore.count, og derved holder antallet opdateret.
       // Yderligere tilføjes "[cartStore.count]" for, at gøre "antalProdukterIKurven" afhænig af "[cartStore.count]" og derved genberegne "antalProdukterIKurven" øjeblikligt, hvis der sker en ændring i "[cartStore.count]"
+      // Inspiration fundet her: "https://stackoverflow.com/questions/40522634/can-i-pass-parameters-in-computed-properties-in-vue-js"
       const antalProdukterIKurven = computed(() => {
         return cartStore.count;
       }, [cartStore.count]);
