@@ -33,7 +33,7 @@ const removeItem = (id) => {
     <Header />
     <main class="kurvContainer">
       <section>
-        <div v-for="(item, index) in cartItems" :key="index">
+          <div v-for="(item, index) in cartItems" :key="index">
           <ProductInfoCard
             :productInfo="item"
             @remove="removeItem(item.product.id)"
@@ -44,7 +44,7 @@ const removeItem = (id) => {
       <section class="checkOutContainer">
         <div class="totalPrisContainer">
           <p>TOTAL</p>
-          <p>135 KR</p>
+          <p class="lato">135 KR</p>
         </div>
         <p>Varen afhentes og betales i butikken</p>
 
@@ -64,7 +64,7 @@ const removeItem = (id) => {
               type="submit"
               name="submitButton"
               value="Udfør bestilling"
-              class="bestillingBtn"
+              class="lato bestillingBtn"
               Gå
               til
               bestilling
@@ -74,7 +74,7 @@ const removeItem = (id) => {
 
         <p>Har du specielle ønsker?</p>
         <p>Så ring på dette nummer</p>
-        <p>↓</p>
+        <p class="arrow">↓</p>
         <a class="removeListStyling" href="tel:+4522425320">+45 22 42 53 20</a>
       </section>
     </main>
@@ -88,23 +88,24 @@ p {
 }
 
 main {
-  height: 90vw;
+  /* height: 70vw; */
   width: 100%;
   display: flex;
 }
 
 .kurvContainer > section {
   width: 50vw;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 12px;
+  width: 0.7vw;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: rgba(56, 43, 37, 100%);
+  border-radius: 8px;
+  background-color: rgba(232, 227, 221, 1);
   -webkit-box-shadow: 0 0 1px rgba(56, 43, 37, 100%);
+  border: 0.1px solid #939393;
 }
 
 .checkOutContainer {
@@ -190,5 +191,55 @@ form > input {
   cursor: pointer;
   border: 1px solid var(--second-bg-beige);
   border-radius: 15px;
+}
+
+.arrow {
+  font-family: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .checkOutContainer {
+    font-size: 2.5vw;
+    gap: 4vw 0;
+  }
+
+  .totalPrisContainer {
+    margin: 3vw 0 0 0;
+    padding: 2vw 3vw;
+    font-size: 3vw;
+  }
+
+  form {
+    gap: 2vw 0;
+  }
+
+  form > input {
+    padding: 1.5vw;
+  }
+
+  .btnContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5vw;
+  }
+
+  .shopVidereBtn {
+    height: 6.5vw;
+    width: 30vw;
+    border-radius: 8px;
+    font-size: 2.5vw;
+  }
+
+  .bestillingBtn {
+    height: 6.5vw;
+    width: 30vw;
+    border-radius: 8px;
+    font-size: 2.5vw;
+  }
+
+  .checkOutContainer > a {
+    margin-top: 0;
+    padding: 1.2vw;
+  }
 }
 </style>

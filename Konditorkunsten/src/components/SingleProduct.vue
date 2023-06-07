@@ -6,7 +6,7 @@
       <p class="kageBeskrivelse">{{ product.description }}</p>
       <div class="prisContainer">
         <p>PRIS</p>
-        <p>{{ product.price }} KR</p>
+        <p class="lato">{{ product.price }} KR</p>
       </div>
       <div class="antalContainer">
         <p>ANTAL</p>
@@ -77,6 +77,7 @@ section {
 img {
   height: 41vw;
   width: 30vw;
+  border: 0.1px solid var(--second-bg-beige);
 }
 
 article {
@@ -125,6 +126,7 @@ article {
   text-align: center;
   min-width: 5vw;
   border-radius: 15px;
+  justify-items: center;
 }
 
 .tilføjTilKurvBtn {
@@ -143,5 +145,47 @@ article {
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
   transition: 0.2s;
+
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    min-height: 70vw;
+    gap: 0 8vw;
+    margin: 5vw;
+    align-items: center;
+  }
+
+  img {
+    height: 55vw;
+  }
+
+  .kageNavn {
+    font-size: 4vw;
+  }
+
+  .kageBeskrivelse {
+    width: 45vw;
+    font-size: 2.5vw;
+  }
+
+  .prisContainer {
+    font-size: 3vw;
+  }
+
+  .antalContainer {
+    font-size: 3vw;
+  }
+
+  .antalProdukterContainer {
+    font-size: 3vw;
+  }
+
+  .tilføjTilKurvBtn {
+    height: 6.5vw;
+    width: 30vw;
+    border-radius: 8px;
+    font-size: 2.5vw;
+  }
 }
 </style>

@@ -47,12 +47,12 @@ export default {
   margin: 0 0 8vw 0;
   grid-column-start: 1;
   grid-column-end: 4;
-  font-size: 2.5vw;
+  font-size: 4vw;
 }
 
 .singleProductContainer {
-  height: 30vw;
-  width: 20vw;
+  height: 35vw;
+  width: 22.5vw;
   background-color: var(--primary-bg-beige);
   text-align: center;
 }
@@ -60,6 +60,7 @@ export default {
 img {
   width: 100%;
   height: 60%;
+  border: 0.1px solid var(--second-bg-beige);
 }
 
 .productInfo {
@@ -68,6 +69,10 @@ img {
   justify-content: space-evenly;
   align-items: center;
   height: 40%;
+}
+
+h3 {
+  font-size: 2.5vw;
 }
 
 .cakeBtn {
@@ -86,5 +91,32 @@ img {
   background-color: var(--primary-bg-beige);
   border: 1px solid var(--cta-brown);
   transition: .2s;
+}
+
+@media only screen and (max-width: 600px) {
+.itemOne {
+  margin-bottom: 10vw;
+  font-size: 5vw;
+}
+
+.singleProductContainer {
+  height: 45vw;
+  width: 26vw;
+}
+
+.productInfo {
+  height: 35%;
+}
+
+h3 {
+  font-size: 3vw;
+}
+
+.cakeBtn {
+  height: 5vw;
+  width: 18vw;
+  border-radius: 8px;
+  font-size: 2.2vw;
+  }
 }
 </style>

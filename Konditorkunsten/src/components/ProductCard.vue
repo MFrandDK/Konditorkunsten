@@ -27,13 +27,23 @@ export default {
 .singleProductContainer {
   height: 30vw;
   width: 20vw;
+  border: .1px solid var(--primary-bg-beige);
   background-color: var(--primary-bg-beige);
   text-align: center;
+}
+.singleProductContainer:hover {
+  border: 1.5px solid var(--cta-brown);
+  border-radius: 3px;
+  transition: .1s ease-in-out;
 }
 
 img {
   width: 100%;
   height: 60%;
+}
+
+h3 {
+  font-size: 1.5vw;
 }
 
 .productInfo {
@@ -50,7 +60,7 @@ img {
   background-color: var(--btn-brown);
   color: var(--white);
   border-style: none;
-  border-radius: 15px;
+  border-radius: 10px;
   font-weight: bold;
   font-size: 1.3vw;
   cursor: pointer;
@@ -60,5 +70,31 @@ img {
   background-color: var(--primary-bg-beige);
   border: 1px solid var(--cta-brown);
   transition: .2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .singleProductContainer {
+    height: 50vw;
+    width: 35vw;
+    border: .1px solid var(--primary-bg-beige);
+    background-color: var(--primary-bg-beige);
+    text-align: center;
+  }
+
+  .productInfo {
+  height: 35%;
+}
+
+h3 {
+  font-size: 3vw;
+}
+
+.cakeBtn {
+  height: 5.5vw;
+  width: 20vw;
+  font-size: 2.5vw;
+  border-radius: 8px;
+}
+
 }
 </style>

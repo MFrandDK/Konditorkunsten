@@ -22,4 +22,4 @@ export const useCartStore = defineStore('CartStore', {
       return this.items.length
     }
   }
-})
+});

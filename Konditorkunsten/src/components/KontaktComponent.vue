@@ -3,9 +3,10 @@
     <article>
       <img
         src="../assets/pictures/Flødeboller.jpg"
-        alt="Konditorkunstens flødeboller på et gyldent fad" loading="lazy"
+        alt="Konditorkunstens flødeboller på et gyldent fad"
+        loading="lazy"
       />
-      <div>
+      <div class="introText">
         <h1>Mere end bare kage</h1>
         <br />
         <p>
@@ -35,16 +36,15 @@ p {
   font-size: 1.2vw;
 }
 
-
 section {
   background: var(--primary-bg-beige);
   color: var(--black);
-  padding: 3vw 4vw;
+  padding: 1vw 4vw;
 }
 
 img {
   border-radius: 100%;
-  width: 35vw;
+  width: 40vw;
 }
 
 article:nth-child(1) {
@@ -63,9 +63,13 @@ h1 {
   font-size: 3vw;
 }
 
+h2 {
+    font-size: 2vw;
+  }
+
 article:nth-child(1) > div > p {
-    margin: 0 auto;
-    width: 80%;
+  margin: 0 auto;
+  width: 80%;
 }
 
 article:nth-child(2) {
@@ -73,7 +77,7 @@ article:nth-child(2) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12vw 0;
+  padding: 8vw 0;
   gap: 1.5vw 0;
 }
 
@@ -97,7 +101,43 @@ button:hover {
   color: var(--cta-brown);
   background-color: var(--secondary-bg-beige);
   border: 1px solid var(--cta-brown);
-  transition: .2s;
+  transition: 0.2s;
 }
 
+@media only screen and (max-width: 600px) {
+  article:nth-child(1) {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 5vw;
+    gap: 5vw;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  p {
+    font-size: 2.5vw;
+  }
+
+  article:nth-child(2) {
+  padding: 6vw 0;
+}
+
+  img {
+    width: 55vw;
+  }
+
+  h2 {
+    font-size: 4vw;
+  }
+
+  button {
+    height: 6.5vw;
+    width: 25vw;
+    font-size: 3vw;
+    margin-top: 5vw;
+  }
+}
 </style>

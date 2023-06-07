@@ -1,7 +1,5 @@
 <script setup>
   import { RouterView } from 'vue-router'
-
-  
 </script>
 
 
@@ -21,6 +19,20 @@
   padding: 0;
 }
 
+main {
+    font-family: 'lora', Serif;
+    min-height: 100vh;
+}
+
+.lato {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+button {
+    font-family: 'Lato', sans-serif;
+}
+
 :root {
 --primary-bg-beige: #E2D9D2;
 --second-bg-beige: #E8E3DD;
@@ -31,6 +43,7 @@
 --cta-gold: #F0BD75;
 --footer-bg-beige: #C9BFB6;
 --red-remove: rgb(225, 52, 52);
+--nav-active: #90552c;
 }
 
 :hover {

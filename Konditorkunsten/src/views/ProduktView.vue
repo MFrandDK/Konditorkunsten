@@ -1,4 +1,3 @@
-
 <script setup>
 import Header from '../components/Header.vue'
 import SingleProduct from '../components/SingleProduct.vue'
@@ -36,7 +35,7 @@ const propValue = ref(null)
     <main>
       <SingleProduct v-if="dataLoaded"  :productId="productId" :product="propValue" />
       <div class="spacerAndBorder"></div>
-      <OtherProductsSection />
+      <OtherProductsSection class="class="sectionsComponent"/>
     </main>
     <Footer />
   </body>
@@ -52,5 +51,10 @@ main {
 .spacerAndBorder {
   border-bottom: 1px solid var(--primary-bg-beige);
   margin: 2vw 0 8vw 0;
+}
+@media only screen and (max-width: 600px) {
+  .sectionsComponent {
+    margin-top: 5vw;
+  }
 }
 </style>

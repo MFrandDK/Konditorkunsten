@@ -12,19 +12,23 @@
         <div>
           <p>PRIS</p>
           <p>{{ productInfo.price }} KR</p>
+
         </div>
         <div class="lineBreak"></div>
         <div>
           <p>ANTAL</p>
           <div class="antalProdukterContainer">
+
             <a @click="decreaseQuantity">-</a>
             <p class="antalProdukterBaggrund">{{ quantity }}</p>
             <a @click="increaseQuantity">+</a>
+
           </div>
         </div>
       </article>
     </div>
     <a class="fjernProduktKnap">FJERN</a>
+
   </article>
 </template>
 
@@ -66,18 +70,20 @@ const ProductInfoCard = {
 export default ProductInfoCard
 </script>
 
+
 <style scoped>
 .productContainer {
   width: 100%;
-  padding: 1.5vw;
-  border-bottom: 0.1px solid var(--primary-bg-beige);
+  padding: 3vw;
+  border-bottom: 2px solid var(--primary-bg-beige);
   color: var(--black);
 }
 
 h3 {
-  font-size: 2vw;
+
+  font-size: 2.5vw;
   font-weight: normal;
-  margin-bottom: 1vw;
+  margin: 2vw 0;
 }
 
 .innerProductContainer {
@@ -87,6 +93,7 @@ h3 {
 img {
   width: 45%;
   margin-right: 1vw;
+  border: 0.1px solid var(--second-bg-beige);
 }
 
 .infoContainer {
@@ -104,7 +111,7 @@ img {
 }
 
 .lineBreak {
-  border-bottom: 0.1px solid var(--primary-bg-beige);
+  border-bottom: 0.1px solid var(--second-bg-beige);
 }
 
 .antalProdukterContainer {
@@ -130,9 +137,43 @@ img {
   padding: 1vw 0;
   cursor: pointer;
   font-size: 1vw;
+  color: var(--red-remove);
 }
 .fjernProduktKnap:hover {
-  color: var(--red-remove);
   transition: 0.2s;
+  scale: 1.3;
+}
+
+@media only screen and (max-width: 600px) {
+  .productContainer {
+    padding: 2.5vw;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+
+  img {
+    width: 35%;
+    margin-right: 2.5vw;
+  }
+
+  .infoContainer {
+    width: 65%;
+  }
+
+  .infoContainer > div {
+    font-size: 2.5vw;
+  }
+
+  .antalProdukterContainer {
+    font-size: 2.5vw;
+    gap: 0 2.8vw;
+  }
+
+  .fjernProduktKnap {
+    margin-left: 86%;
+    font-size: 2vw;
+  }
 }
 </style>
