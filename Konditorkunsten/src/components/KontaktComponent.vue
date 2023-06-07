@@ -19,7 +19,7 @@
     <article class="centerText">
       <h2>Har du en kommende speciel anledning?</h2>
       <p>Klik her for at komme i kontakt</p>
-      <button>Kontakt</button>
+      <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/"><button>Kontakt</button></a>
     </article>
   </section>
 </template>
@@ -108,7 +108,7 @@ button:hover {
   article:nth-child(1) {
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 5vw;
+    padding-top: 8vw;
     gap: 5vw;
     align-items: center;
   }
@@ -122,7 +122,7 @@ button:hover {
   }
 
   article:nth-child(2) {
-  padding: 6vw 0;
+  padding: 6vw 0 10vw 0;
 }
 
   img {
@@ -134,9 +134,9 @@ button:hover {
   }
 
   button {
-    height: 6.5vw;
-    width: 25vw;
-    font-size: 3vw;
+    height: 8.5vw;
+    width: 30vw;
+    font-size: 3.5vw;
     margin-top: 5vw;
   }
 }

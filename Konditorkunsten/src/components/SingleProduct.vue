@@ -1,9 +1,11 @@
 <template>
   <section>
-    <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
+    <div class="imageContainer">
+      <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
+    </div>
     <article>
       <h1 class="kageNavn">{{ product.name }}</h1>
-      <p class="kageBeskrivelse">{{ product.description }}</p>
+      <p class="kageBeskrivelse" v-html="product.description"></p>
       <div class="prisContainer">
         <p>PRIS</p>
         <p class="lato">{{ product.price }} KR</p>
@@ -16,13 +18,18 @@
           <a @click="increaseQuantity">+</a>
         </div>
       </div>
-      <button @click="addToCart(product)" class="tilføjTilKurvBtn">Tilføj til kurv</button>
+      <div class="mobileButtons">
+        <div class="mobileSpacer"></div>
+        <button @click="addToCart(product)" class="tilføjTilKurvBtn">Tilføj til kurv</button>
+        <div class="mobileSpacer"></div>
+        <RouterLink class="removeListStyling" to="/kurv"><button class="gåTilKurvBtn">Gå til kurv</button></RouterLink>
+      </div>
     </article>
   </section>
 </template>
 
 <script>
-import { useCartStore } from '@/stores/CartStore' 
+import { useCartStore } from '@/stores/CartStore'
 import { ref } from 'vue'
 
 export default {
@@ -74,10 +81,16 @@ section {
   margin: 8vw;
 }
 
-img {
-  height: 41vw;
-  width: 30vw;
+.imageContainer {
+  height: 36vw;
+  width: 36vw;
   border: 0.1px solid var(--second-bg-beige);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 article {
@@ -145,23 +158,44 @@ article {
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
   transition: 0.2s;
+}
 
+.gåTilKurvBtn {
+  display: none;
+}
+
+.mobileSpacer {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
   section {
     min-height: 70vw;
-    gap: 0 8vw;
+    gap: 10vw 0vw;
     margin: 5vw;
     align-items: center;
+    flex-direction: column;
   }
 
-  img {
-    height: 55vw;
+  .imageContainer {
+    height: 50vw;
+    width: 50vw;
+    border: 0.1px solid var(--second-bg-beige);
+  }
+
+  .picture > img {
+    object-fit: contain;
+    width: 100%;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw 0;
   }
 
   .kageNavn {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 
   .kageBeskrivelse {
@@ -170,22 +204,60 @@ article {
   }
 
   .prisContainer {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 
   .antalContainer {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 
   .antalProdukterContainer {
-    font-size: 3vw;
+    font-size: 3.5vw;
+    gap: 0 3vw;
+  }
+
+  .antalProdukterContainer > a,
+  .antalProdukterContainer > p {
+    font-size: 4.2vw;
+  }
+
+  .mobileButtons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobileSpacer {
+    display: block;
+    padding: 0.5vw;
   }
 
   .tilføjTilKurvBtn {
-    height: 6.5vw;
+    height: 8.5vw;
     width: 30vw;
-    border-radius: 8px;
-    font-size: 2.5vw;
+    font-size: 3.5vw;
+    margin: 0 auto;
+  }
+
+  .gåTilKurvBtn {
+    display: block;
+    height: 8.5vw;
+    width: 30vw;
+    font-size: 3.5vw;
+    margin-top: 5vw;
+    margin: 0 auto;
+    background-color: var(--cta-gold);
+    color: var(--white);
+    border-style: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .gåTilKurvBtn:hover {
+    color: var(--cta-gold);
+    background-color: var(--white);
+    border: 1px solid var(--cta-gold);
+    transition: 0.2s;
   }
 }
 </style>

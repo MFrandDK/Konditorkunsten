@@ -14,6 +14,7 @@ const products = computed(() => {
   return store.products;
 });
 
+// Brug af onMounted(): "https://vuejs.org/api/composition-api-lifecycle.html#onmounted"
 onMounted(() => {
   store.fetchProducts();
 });

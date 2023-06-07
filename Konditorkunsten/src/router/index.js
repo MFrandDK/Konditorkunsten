@@ -3,11 +3,13 @@ import ShopView from '../views/ShopView.vue'
 import ProduktView from '../views/ProduktView.vue'
 import KurvView from '../views/KurvView.vue'
 
+// HMR (hot module reload) brug af Vite: "https://pinia.vuejs.org/cookbook/hot-module-replacement.html"
+// Dynamic routing: "https://router.vuejs.org/guide/essentials/dynamic-matching.html" og "https://blog.logrocket.com/dynamic-routing-using-vue-router/"
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/shop',
       name: 'shop',
       component: ShopView
     },
@@ -20,7 +22,8 @@ const router = createRouter({
     {
       path: '/kurv',
       name: 'kurv',
-      component: KurvView
+      component: KurvView,
+      props: true
     }
   ]
 })
