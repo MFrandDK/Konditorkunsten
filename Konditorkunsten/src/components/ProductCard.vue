@@ -1,7 +1,9 @@
 <template>
   
-    <article class="singleProductContainer"  >
-      <img :src="product.imageUrl" alt="" loading="lazy" />
+    <article class="singleProductContainer">
+      <div class="imageContainer">
+        <img :src="product.imageUrl" :alt="product.images[0].alt" loading="lazy" />
+      </div>
       <article class="productInfo">
         <h3 >{{product.name}}</h3>
         <RouterLink :to="{ name: 'product', params: { id: product.id } }"><button class="cakeBtn">Se produkt</button></RouterLink>
@@ -30,16 +32,23 @@ export default {
   border: .1px solid var(--primary-bg-beige);
   background-color: var(--primary-bg-beige);
   text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  overflow: hidden;
 }
-.singleProductContainer:hover {
-  border: 1.5px solid var(--cta-brown);
-  border-radius: 3px;
-  transition: .1s ease-in-out;
+.singleProductContainer:hover img{
+  scale: 1.1;
+  transition: .4s ease-in-out;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 60%;
 }
 
 img {
   width: 100%;
-  height: 60%;
+  height: 100%;
+  object-fit: cover;
 }
 
 h3 {

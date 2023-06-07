@@ -1,18 +1,18 @@
 <template>
   <header id="header"
   @wheel.prevent @touchmove.prevent @scroll.prevent >
-    <router-link to="/"
+    <a href="https://www.emil-jensen-portfolio.dk/"
       ><img
         class="logo"
         src="../assets/pictures/logo-konditorkunsten.png"
         alt="Konditorkunstens logo"
-    /></router-link>
+    /></a>
     <nav>
-      <RouterLink to="/forside">Forside</RouterLink>
-      <RouterLink to="/">Shop</RouterLink>
-      <RouterLink to="/kurser">Kurser</RouterLink>
-      <RouterLink to="/om-os">Om os</RouterLink>
-      <RouterLink to="/kontakt">Kontakt</RouterLink>
+      <a href="https://www.emil-jensen-portfolio.dk/">Forside</a>
+      <RouterLink to="/shop">Shop</RouterLink>
+      <a href="https://www.emil-jensen-portfolio.dk/kurser/">Kurser</a>
+      <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/">Om os</a>
+      <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/">Kontakt</a>
       <RouterLink class="kurv" to="/kurv"
         ><img
           class="kurvIcon"

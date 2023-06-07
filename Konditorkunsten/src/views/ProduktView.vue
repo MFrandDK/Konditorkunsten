@@ -1,8 +1,9 @@
 <script setup>
 import Header from '../components/Header.vue'
 import SingleProduct from '../components/SingleProduct.vue'
-import OtherProductsSection from '../components/OtherProductsSection.vue'
+// import OtherProductsSection from '../components/OtherProductsSection.vue'
 import Footer from '../components/Footer.vue'
+import GoBackButton from '../components/GoBackButton.vue'
 
 import { useProductStore } from '@/stores/ProductStore';
 import { computed, ref, onMounted } from 'vue';
@@ -33,9 +34,10 @@ const propValue = ref(null)
   <body>
     <Header />
     <main>
+      <GoBackButton />
       <SingleProduct v-if="dataLoaded"  :productId="productId" :product="propValue" />
-      <div class="spacerAndBorder"></div>
-      <OtherProductsSection class="sectionsComponent"/>
+      <!-- <div class="spacerAndBorder"></div> -->
+      <!-- <OtherProductsSection class="sectionsComponent"/> -->
     </main>
     <Footer />
   </body>

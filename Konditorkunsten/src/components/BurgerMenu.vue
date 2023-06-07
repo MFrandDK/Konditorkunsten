@@ -52,7 +52,7 @@ export default {
     height: 100vh;
     position: relative;
     z-index: 2;
-    padding-bottom: 25vw;
+    padding-bottom: 45vw;
     background-color: var(--second-bg-beige);
     font-size: 5vw;
     flex-direction: column;

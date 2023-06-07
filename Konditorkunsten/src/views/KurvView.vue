@@ -1,30 +1,28 @@
 <script setup>
-// Nedenfor benyttes isProxy og toRaw, som gjorde det muligt at modtage data uden proxy strukturen, inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy"
+// Nedenfor benyttes isProxy og toRaw, som gjorde det muligt at modtage data uden Pinias tilførte proxy struktur, inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy"
 import { computed, isProxy, toRaw } from 'vue'
 import { useCartStore } from '@/stores/CartStore'
 
 import Header from '../components/Header.vue'
 import ProductInfoCard from '../components/ProductInfoCard.vue'
 import Footer from '../components/Footer.vue'
+import GoBackButton from '../components/GoBackButton.vue'
 
 const cart = useCartStore()
 
 const cartItems = computed(() => {
-  const items = cart.items
-  if (isProxy(items)) {
-    console.log('Cart Items:', toRaw(items))
-    return toRaw(items)
+  const cartItems = cart.cartItems
+  if (isProxy(cartItems)) {
+    console.log('Cart Items:', toRaw(cartItems))
+    return toRaw(cartItems)
   } else {
-    console.log('Cart Items:', items)
-    return items
+    console.log('Cart Items:', cartItems)
+    return cartItems
   }
 })
 
-// Nedenfor er en funktion som kan kaldes for, at fjerne et produkt fra kurven, via produktets id
-// toRaw inspiration fundet her: "inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy""
-const removeItem = (id) => {
-  const rawId = toRaw(id);
-  cart.removeItem(rawId);
+const udførBestillingAlert = () => {
+  alert("Din bestilling er gennemført")
 };
 </script>
 
@@ -32,11 +30,12 @@ const removeItem = (id) => {
   <body>
     <Header />
     <main class="kurvContainer">
+      <GoBackButton />
       <section>
-          <div v-for="(item, index) in cartItems" :key="index">
+        <div v-for="(item, index) in cartItems" :key="index">
           <ProductInfoCard
             :productInfo="item"
-            @remove="removeItem(item.product.id)"
+            :removeItem="removeItem"
           />
         </div>
       </section>
@@ -44,7 +43,7 @@ const removeItem = (id) => {
       <section class="checkOutContainer">
         <div class="totalPrisContainer">
           <p>TOTAL</p>
-          <p class="lato">135 KR</p>
+          <p class="lato">{{ cart.cartTotalPrice }} KR</p>
         </div>
         <p>Varen afhentes og betales i butikken</p>
 
@@ -59,8 +58,9 @@ const removeItem = (id) => {
           <input type="email" id="email" name="email" placeholder="E-mail" />
 
           <div class="btnContainer">
-            <button class="shopVidereBtn">Shop videre</button>
+            <RouterLink to="/shop"> <button class="shopVidereBtn">Shop videre</button></RouterLink>
             <input
+              @click="udførBestillingAlert"
               type="submit"
               name="submitButton"
               value="Udfør bestilling"
@@ -194,7 +194,7 @@ form > input {
 }
 
 .arrow {
-  font-family: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media only screen and (max-width: 600px) {

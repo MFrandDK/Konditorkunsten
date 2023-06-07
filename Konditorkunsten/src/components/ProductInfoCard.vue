@@ -1,39 +1,30 @@
 <template>
-    <!-- Nedenfor benyttes v-if, for at kontrollere om productInfo er defineret -->
+  <!-- Nedenfor benyttes v-if, for at kontrollere om productInfo er defineret -->
   <article v-if="productInfo" class="productContainer">
     <h3>{{ productInfo.name }}</h3>
     <div class="innerProductContainer">
-      <img
-        :src="productInfo.images[0].src"
-        :alt="productInfo.images[0].alt"
-        loading="lazy"
-      />
+      <img :src="productInfo.images[0].src" :alt="productInfo.images[0].alt" loading="lazy" />
       <article class="infoContainer">
         <div>
           <p>PRIS</p>
           <p>{{ productInfo.price }} KR</p>
-
         </div>
         <div class="lineBreak"></div>
         <div>
           <p>ANTAL</p>
           <div class="antalProdukterContainer">
-
-            <a @click="decreaseQuantity">-</a>
             <p class="antalProdukterBaggrund">{{ quantity }}</p>
-            <a @click="increaseQuantity">+</a>
-
           </div>
         </div>
       </article>
     </div>
-    <a class="fjernProduktKnap">FJERN</a>
-
+    <a @click="removeFromCart()" class="fjernProduktKnap">FJERN</a>
   </article>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { useCartStore } from '@/stores/CartStore'
+import { ref, computed } from 'vue'
 
 const ProductInfoCard = {
   name: 'ProductInfoCard',
@@ -41,35 +32,34 @@ const ProductInfoCard = {
     productInfo: {
       type: Object,
       required: true
+    },
+    removeItem: {
+      type: Function,
+      required: true
     }
   },
-  setup(props) {
+  setup() {
+    // Brug af ref(): "https://vuejs.org/api/reactivity-core.html#ref"
     const quantity = ref(1)
 
-    console.log('ProductInfoCard - Product Info:', props.productInfo)
-    console.log('ProductInfoCard - Quantity:', quantity.value)
+    const cartStore = useCartStore()
 
-    const decreaseQuantity = () => {
-      if (quantity.value > 1) {
-        quantity.value--
-      }
-    }
+    const cartItems = computed(() => cartStore.getCartItems())
 
-    const increaseQuantity = () => {
-      quantity.value++
+    const removeFromCart = (productId) => {
+      cartStore.removeProduct(productId)
     }
 
     return {
       quantity,
-      decreaseQuantity,
-      increaseQuantity
-    }
+      cartItems,
+      removeFromCart
+    };
   }
 }
 
 export default ProductInfoCard
 </script>
-
 
 <style scoped>
 .productContainer {
@@ -80,7 +70,6 @@ export default ProductInfoCard
 }
 
 h3 {
-
   font-size: 2.5vw;
   font-weight: normal;
   margin: 2vw 0;
