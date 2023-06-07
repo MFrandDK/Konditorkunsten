@@ -13,7 +13,7 @@
           src="../assets/pictures/Shopping-kurv.svg"
           alt="Shopping kurv | Åben kurven" loading="lazy"
         />
-        <p class="antalVarerCirkel">10</p>
+        <p class="antalVarerCirkel" >{{ antalProdukterIKurven }}</p>
       </RouterLink>
     </nav>
   </header>
@@ -22,12 +22,22 @@
 
 
 <script>
-// import { ref } from "vue";
-// import { useCartStore } from '../stores/CartStore';
-// const cartStore = useCartStore();
+import { computed } from 'vue';
+import { useCartStore } from '../stores/CartStore';
 
 export default {
     name: "HeaderComponent",
+    setup() {
+      const cartStore = useCartStore();
+      // Logikken nedenfor er lavet som computed, fordi Vue derved automatisk overvåger cartStore.count, og derved holder antallet opdateret.
+      // Yderligere tilføjes "[cartStore.count]" for, at gøre "antalProdukterIKurven" afhænig af "[cartStore.count]" og derved genberegne "antalProdukterIKurven" øjeblikligt, hvis der sker en ændring i "[cartStore.count]"
+      const antalProdukterIKurven = computed(() => {
+        return cartStore.count;
+      }, [cartStore.count]);
+      return {
+        antalProdukterIKurven,
+      }
+    }
 }
 </script>
 

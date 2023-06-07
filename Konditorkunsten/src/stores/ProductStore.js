@@ -47,7 +47,6 @@ export const useProductStore = defineStore('product', {
             imageUrl: product.images[0].src
           };
         }
-        console.log('imgTest', product.images[0].src);
         this.products = updatedProducts;
         console.log(product)
 

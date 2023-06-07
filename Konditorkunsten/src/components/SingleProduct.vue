@@ -1,20 +1,3 @@
-<!-- <script setup>
-import { useProductStore } from '@/stores/ProductStore';
-import { computed, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-
-const store = useProductStore();
-const route = useRoute();
-const productId = computed(() => route.params.id);
-const product = computed(() => store.getProductbyId(productId.value));
-
-onMounted(() => {
-  if (!product.value) {
-    store.fetchProductById(productId.value);
-  }
-});
-</script> -->
-
 <template>
   <section>
     <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
@@ -28,27 +11,57 @@ onMounted(() => {
       <div class="antalContainer">
         <p>ANTAL</p>
         <div class="antalProdukterContainer">
-          <a>-</a>
-          <p class="antalProdukterBaggrund">1</p>
-          <a>+</a>
+          <a @click="decreaseQuantity">-</a>
+          <p class="antalProdukterBaggrund">{{ quantity }}</p>
+          <a @click="increaseQuantity">+</a>
         </div>
       </div>
-      <button class="tilføjTilKurvBtn">Tilføj til kurv</button>
+      <button @click="addToCart(product)" class="tilføjTilKurvBtn">Tilføj til kurv</button>
     </article>
   </section>
 </template>
 
 <script>
+import { useCartStore } from '@/stores/CartStore' 
+import { ref } from 'vue'
+
 export default {
-  name: "SingleProduct",
+  name: 'SingleProduct',
   props: {
     productId: {
       type: String,
       required: true
     },
     product: {
-      product: Object,
+      type: Object,
       required: true
+    }
+  },
+  setup() {
+    const cart = useCartStore()
+    const quantity = ref(1)
+
+    const decreaseQuantity = () => {
+      if (quantity.value > 1) {
+        quantity.value--
+      }
+    }
+
+    const increaseQuantity = () => {
+      quantity.value++
+    }
+
+    const addToCart = (product) => {
+      cart.addItems(quantity.value, product)
+      console.log('Tilføj til kurv test:', product)
+      console.log('Kurv indhold test:', cart)
+    }
+
+    return {
+      quantity,
+      decreaseQuantity,
+      increaseQuantity,
+      addToCart
     }
   }
 }

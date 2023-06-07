@@ -15,7 +15,6 @@ const productId = computed(() => route.params.id);
 const dataLoaded = ref(false)
 const propValue = ref(null)
 
-
     onMounted(async () => {
       try {
         // let state = this.state.first

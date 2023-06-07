@@ -1,33 +1,29 @@
 <script setup>
+import { computed, isProxy, toRaw } from 'vue'
+import { useCartStore } from '@/stores/CartStore'
+
 import Header from '../components/Header.vue'
 import ProductInfoCard from '../components/ProductInfoCard.vue'
 import Footer from '../components/Footer.vue'
 
-// import { useCartStore } from '@/stores/CartStore';
-import { useProductStore } from '@/stores/ProductStore';
-import { computed, ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+const cart = useCartStore()
 
-// const cart = useCartStore();
+const cartItems = computed(() => {
+  const items = cart.items
+  if (isProxy(items)) {
+    console.log('Cart Items:', toRaw(items))
+    return toRaw(items)
+  } else {
+    console.log('Cart Items:', items)
+    return items
+  }
+})
 
-const store = useProductStore();
-const route = useRoute();
-const productId = computed(() => route.params.id);
-const dataLoaded = ref(false)
-const propValue = ref(null)
-
-onMounted(async () => {
-      try {
-        // let state = this.state.first
-        const result = await store.fetchProductById(productId.value);
-        propValue.value = result;
-        dataLoaded.value = true;
-        console.log(propValue.value.name);
-        // console.log("state", store.getters.getProducts(state));
-      } catch (error) {
-        console.error(error);
-      }
-    });
+// Fjern et produkt fra kurven baseret på dets id
+const removeItem = (id) => {
+  const rawId = toRaw(id);
+  cart.removeItem(rawId);
+};
 </script>
 
 <template>
@@ -35,7 +31,12 @@ onMounted(async () => {
     <Header />
     <main class="kurvContainer">
       <section>
-        <ProductInfoCard v-if="dataLoaded"  :productId="productId" :product="propValue" />
+        <div v-for="(item, index) in cartItems" :key="index">
+          <ProductInfoCard
+            :productInfo="item"
+            @remove="removeItem(item.product.id)"
+          />
+        </div>
       </section>
 
       <section class="checkOutContainer">
@@ -50,19 +51,22 @@ onMounted(async () => {
           <input type="text" id="forNavn" name="firstName" placeholder="Dit navn" />
 
           <label for="telefonNummer">Telefonnummer</label>
-          <input
-            type="tel"
-            id="telefonNummer"
-            name="phoneNumber"
-            placeholder="Dit telefonnummer"
-          />
+          <input type="tel" id="telefonNummer" name="phoneNumber" placeholder="Dit telefonnummer" />
 
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" placeholder="E-mail" />
 
           <div class="btnContainer">
             <button class="shopVidereBtn">Shop videre</button>
-            <input type="submit" name="submitButton" value="Udfør bestilling" class="bestillingBtn" Gå til bestilling />
+            <input
+              type="submit"
+              name="submitButton"
+              value="Udfør bestilling"
+              class="bestillingBtn"
+              Gå
+              til
+              bestilling
+            />
           </div>
         </form>
 
@@ -125,11 +129,11 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: .5vw 0;
+  gap: 0.5vw 0;
   margin-top: 3vw;
 }
 
-form>input {
+form > input {
   padding: 1vw;
   margin-bottom: 2vw;
 }
@@ -157,7 +161,7 @@ form>input {
   color: var(--cta-brown);
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .bestillingBtn {
@@ -175,7 +179,7 @@ form>input {
   color: var(--cta-gold);
   background-color: var(--white);
   border: 1px solid var(--cta-gold);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .checkOutContainer > a {
