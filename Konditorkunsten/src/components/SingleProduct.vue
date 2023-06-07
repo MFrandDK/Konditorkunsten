@@ -1,6 +1,8 @@
 <template>
   <section>
-    <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
+    <div class="picture">
+      <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
+    </div>
     <article>
       <h1 class="kageNavn">{{ product.name }}</h1>
       <p class="kageBeskrivelse">{{ product.description }}</p>
@@ -22,7 +24,7 @@
 </template>
 
 <script>
-import { useCartStore } from '@/stores/CartStore' 
+import { useCartStore } from '@/stores/CartStore'
 import { ref } from 'vue'
 
 export default {
@@ -74,10 +76,15 @@ section {
   margin: 8vw;
 }
 
-img {
-  height: 41vw;
-  width: 30vw;
+.picture {
+  height: 15vw;
+  /* width: 5vw; */
   border: 0.1px solid var(--second-bg-beige);
+}
+
+.picture > img {
+  object-fit: contain;
+  width: 100%;
 }
 
 article {
@@ -145,7 +152,6 @@ article {
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
   transition: 0.2s;
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -156,8 +162,15 @@ article {
     align-items: center;
   }
 
-  img {
-    height: 55vw;
+  .picture {
+    height: 15vw;
+    /* width: 5vw; */
+    border: 0.1px solid var(--second-bg-beige);
+  }
+
+  .picture > img {
+    object-fit: contain;
+    width: 100%;
   }
 
   .kageNavn {

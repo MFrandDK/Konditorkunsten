@@ -35,7 +35,7 @@ const propValue = ref(null)
     <main>
       <SingleProduct v-if="dataLoaded"  :productId="productId" :product="propValue" />
       <div class="spacerAndBorder"></div>
-      <OtherProductsSection class="class="sectionsComponent"/>
+      <OtherProductsSection class="sectionsComponent"/>
     </main>
     <Footer />
   </body>
