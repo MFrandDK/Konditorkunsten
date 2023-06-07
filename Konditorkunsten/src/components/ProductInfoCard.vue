@@ -1,70 +1,75 @@
 <template>
-  <article class="productContainer">
-    <h3>Kage navn</h3>
+    <!-- Nedenfor benyttes v-if, for at kontrollere om productInfo er defineret -->
+  <article v-if="productInfo" class="productContainer">
+    <h3>{{ productInfo.name }}</h3>
     <div class="innerProductContainer">
-      <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
+      <img
+        :src="productInfo.images[0].src"
+        :alt="productInfo.images[0].alt"
+        loading="lazy"
+      />
       <article class="infoContainer">
         <div>
           <p>PRIS</p>
-          <p class="lato">73 KR</p>
+          <p>{{ productInfo.price }} KR</p>
+
         </div>
         <div class="lineBreak"></div>
         <div>
           <p>ANTAL</p>
           <div class="antalProdukterContainer">
-            <!-- VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce -->
-            <a @click="removeFromCart(item.productId)">-</a>
-            <p class="antalProdukterBaggrund lato">1</p>
-            <a @click="addToCart(item.productId)">+</a>
+
+            <a @click="decreaseQuantity">-</a>
+            <p class="antalProdukterBaggrund">{{ quantity }}</p>
+            <a @click="increaseQuantity">+</a>
+
           </div>
         </div>
       </article>
     </div>
-    <!-- VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce -->
-    <a class="fjernProduktKnap" @click="removeFromCart(item.productId)">FJERN</a>
+    <a class="fjernProduktKnap">FJERN</a>
+
   </article>
 </template>
 
 <script>
-import { useCartStore } from '@/stores/CartStore'
+import { ref } from 'vue'
 
-export default {
-  name: 'ProductCardComponent',
-
+const ProductInfoCard = {
+  name: 'ProductInfoCard',
   props: {
-    item: Object
+    productInfo: {
+      type: Object,
+      required: true
+    }
   },
+  setup(props) {
+    const quantity = ref(1)
 
-  setup() {
-    const cartStore = useCartStore()
+    console.log('ProductInfoCard - Product Info:', props.productInfo)
+    console.log('ProductInfoCard - Quantity:', quantity.value)
 
-    const addOneToCart = (item) => {
-      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
-      cartStore.addOneItem(1, item.productId)
+    const decreaseQuantity = () => {
+      if (quantity.value > 1) {
+        quantity.value--
+      }
     }
-    
-    const addToCart = (item) => {
-      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
-      cartStore.addItems(item.quantity, item.productId)
-    }
-    // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
-    const removeOneFromCart = (item) => {
-      cartStore.removeOneItem(1, item.productId)
-    }
-    
-    const removeFromCart = (item) => {
-      cartStore.removeItems(item.quantity, item.productId)
+
+    const increaseQuantity = () => {
+      quantity.value++
     }
 
     return {
-      addOneToCart,
-      addToCart,
-      removeOneFromCart,
-      removeFromCart
+      quantity,
+      decreaseQuantity,
+      increaseQuantity
     }
   }
 }
+
+export default ProductInfoCard
 </script>
+
 
 <style scoped>
 .productContainer {
@@ -75,6 +80,7 @@ export default {
 }
 
 h3 {
+
   font-size: 2.5vw;
   font-weight: normal;
   margin: 2vw 0;

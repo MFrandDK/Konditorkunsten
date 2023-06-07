@@ -20,7 +20,7 @@
           alt="Shopping kurv | Åben kurven"
           loading="lazy"
         />
-        <p class="antalVarerCirkel lato">1</p>
+        <p class="antalVarerCirkel" >{{ antalProdukterIKurven }}</p>
       </RouterLink>
 
       <!-- Inspiration til burger-menu:
@@ -43,14 +43,25 @@
 </template>
 
 <script>
-// import { ref } from "vue";
-// import { useCartStore } from '../stores/CartStore';
-// const cartStore = useCartStore();
+import { computed } from 'vue';
+import { useCartStore } from '../stores/CartStore';
 
 import BurgerMenu from './BurgerMenu.vue'
 
 export default {
-  name: 'HeaderComponent',
+    name: "HeaderComponent",
+    setup() {
+      const cartStore = useCartStore();
+      // Logikken nedenfor er lavet som computed, fordi Vue derved automatisk overvåger cartStore.count, og derved holder antallet opdateret.
+      // Yderligere tilføjes "[cartStore.count]" for, at gøre "antalProdukterIKurven" afhænig af "[cartStore.count]" og derved genberegne "antalProdukterIKurven" øjeblikligt, hvis der sker en ændring i "[cartStore.count]"
+      // Inspiration fundet her: "https://stackoverflow.com/questions/40522634/can-i-pass-parameters-in-computed-properties-in-vue-js"
+      const antalProdukterIKurven = computed(() => {
+        return cartStore.count;
+      }, [cartStore.count]);
+      return {
+        antalProdukterIKurven,
+      }
+    },
   components: { BurgerMenu },
 
   data() {
@@ -58,6 +69,7 @@ export default {
       showBurgerMenu: false
     }
   }
+
 }
 </script>
 

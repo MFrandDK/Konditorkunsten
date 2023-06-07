@@ -1,74 +1,67 @@
 <template>
   <section>
-    <img
-      src="../assets/pictures/ChokoladeCheesecake.jpg"
-      alt="Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust Oreo og pyntet med ristede peanuts."
-    />
+    <img :src="product.images[0].src" :alt="product.images[0].alt" loading="lazy" />
     <article>
-      <h1 class="kageNavn">Kage navn</h1>
-      <p class="kageBeskrivelse">
-        Lækker chokolade cheesecake med blide toner og en fyldig smag. Lavet på en bund af knust
-        Oreo og pyntet med ristede peanuts.
-      </p>
+      <h1 class="kageNavn">{{ product.name }}</h1>
+      <p class="kageBeskrivelse">{{ product.description }}</p>
       <div class="prisContainer">
         <p>PRIS</p>
-        <p class="lato">73 KR</p>
+        <p class="lato">{{ product.price }} KR</p>
       </div>
       <div class="antalContainer">
         <p>ANTAL</p>
         <div class="antalProdukterContainer">
-          <a @click="removeOneFromCart(item)">-</a>
-          <p class="antalProdukterBaggrund lato">{{ item.quantity }}</p>
-          <a @click="addOneToCart(item)">+</a>
+          <a @click="decreaseQuantity">-</a>
+          <p class="antalProdukterBaggrund">{{ quantity }}</p>
+          <a @click="increaseQuantity">+</a>
         </div>
       </div>
-      <button class="tilføjTilKurvBtn" @click="addToCart(item.productId)">Tilføj til kurv</button>
+      <button @click="addToCart(product)" class="tilføjTilKurvBtn">Tilføj til kurv</button>
     </article>
   </section>
 </template>
 
 <script>
-import { useCartStore } from '@/stores/CartStore'
+import { useCartStore } from '@/stores/CartStore' 
+import { ref } from 'vue'
 
 export default {
   name: 'SingleProduct',
-
   props: {
-    item: Object
+    productId: {
+      type: String,
+      required: true
+    },
+    product: {
+      type: Object,
+      required: true
+    }
   },
-
   setup() {
-    const cartStore = useCartStore()
+    const cart = useCartStore()
+    const quantity = ref(1)
 
-    const addOneToCart = (item) => {
-      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
-      cartStore.addOneItem(1, item)
-    }
-
-    const addToCart = (item) => {
-      // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
-      cartStore.addItems(1, item)
-      // Ved brug af "quantity++" burde knappen øge antallet af produktet i komponentets data
-      item.quantity++
-    }
-    // VIGTIGT Lav den rigtige produktID stig, ift. WooCommerce
-    const removeOneFromCart = (item) => {
-      cartStore.removeOneItem(1, item.productId)
-    }
-
-    const removeFromCart = (item) => {
-      if (item.quantity > 0) {
-        cartStore.removeItems(item.productId)
-        // Ved brug af "quantity--" burde knappen sænke antallet af produktet i komponentets data
-        item.quantity--
+    const decreaseQuantity = () => {
+      if (quantity.value > 1) {
+        quantity.value--
       }
     }
 
+    const increaseQuantity = () => {
+      quantity.value++
+    }
+
+    const addToCart = (product) => {
+      cart.addItems(quantity.value, product)
+      console.log('Tilføj til kurv test:', product)
+      console.log('Kurv indhold test:', cart)
+    }
+
     return {
-      addOneToCart,
-      addToCart,
-      removeOneFromCart,
-      removeFromCart
+      quantity,
+      decreaseQuantity,
+      increaseQuantity,
+      addToCart
     }
   }
 }
@@ -82,6 +75,7 @@ section {
 }
 
 img {
+  height: 41vw;
   width: 30vw;
   border: 0.1px solid var(--second-bg-beige);
 }
@@ -151,6 +145,7 @@ article {
   background-color: var(--white);
   border: 1px solid var(--cta-brown);
   transition: 0.2s;
+
 }
 
 @media only screen and (max-width: 600px) {

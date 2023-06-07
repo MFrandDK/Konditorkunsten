@@ -1,16 +1,25 @@
 <template>
-  <article class="singleProductContainer">
-    <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
-    <article class="productInfo">
-      <h3>Kage navn</h3>
-      <RouterLink to="/Produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
+  
+    <article class="singleProductContainer"  >
+      <img :src="product.imageUrl" alt="" loading="lazy" />
+      <article class="productInfo">
+        <h3 >{{product.name}}</h3>
+        <RouterLink :to="{ name: 'product', params: { id: product.id } }"><button class="cakeBtn">Se produkt</button></RouterLink>
+      </article>
     </article>
-  </article>
+
+  
 </template>
 
 <script>
 export default {
-  name: 'ProductInfoCardComponent'
+  name: 'ProductInfoCardComponent',
+  props: {
+    product: {
+      type: Object,
+      required: true,
+    },
+  },
 }
 </script>
 

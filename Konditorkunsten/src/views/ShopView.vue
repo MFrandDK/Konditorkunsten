@@ -6,8 +6,17 @@ import KontaktComponent from '@/components/KontaktComponent.vue'
 import Footer from '@/components/Footer.vue'
 
 import { useProductStore } from '@/stores/ProductStore'
-const productStore = useProductStore()
-productStore.fill()
+import { onMounted, computed } from 'vue'
+
+const store = useProductStore();
+
+const products = computed(() => {
+  return store.products;
+});
+
+onMounted(() => {
+  store.fetchProducts();
+});
 </script>
 
 <template>
@@ -29,11 +38,10 @@ productStore.fill()
         </ul>
       </nav>
       <section class="productContainer">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <div v-for="product in products" :key="product.id">
+          <ProductCard :product="product"/>
+        </div>
+        
       </section>
       <KontaktComponent />
     </main>

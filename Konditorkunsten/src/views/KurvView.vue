@@ -1,18 +1,31 @@
-<script>
-import Header from '@/components/Header.vue';
-import ProductInfoCard from '@/components/ProductInfoCard.vue';
-import Footer from '@/components/Footer.vue';
+<script setup>
+// Nedenfor benyttes isProxy og toRaw, som gjorde det muligt at modtage data uden proxy strukturen, inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy"
+import { computed, isProxy, toRaw } from 'vue'
+import { useCartStore } from '@/stores/CartStore'
 
-import { useCartStore } from '@/stores/CartStore';
+import Header from '../components/Header.vue'
+import ProductInfoCard from '../components/ProductInfoCard.vue'
+import Footer from '../components/Footer.vue'
 
-export default {
-  setup() {
-    const cartStore = useCartStore();
-    return {
-      cartStore
-    };
+const cart = useCartStore()
+
+const cartItems = computed(() => {
+  const items = cart.items
+  if (isProxy(items)) {
+    console.log('Cart Items:', toRaw(items))
+    return toRaw(items)
+  } else {
+    console.log('Cart Items:', items)
+    return items
   }
-}
+})
+
+// Nedenfor er en funktion som kan kaldes for, at fjerne et produkt fra kurven, via produktets id
+// toRaw inspiration fundet her: "inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy""
+const removeItem = (id) => {
+  const rawId = toRaw(id);
+  cart.removeItem(rawId);
+};
 </script>
 
 <template>
@@ -20,7 +33,12 @@ export default {
     <Header />
     <main class="kurvContainer">
       <section>
-        <!-- <ProductInfoCard v-for="item in $cart.items" :key="item.id" :item="item" /> -->
+          <div v-for="(item, index) in cartItems" :key="index">
+          <ProductInfoCard
+            :productInfo="item"
+            @remove="removeItem(item.product.id)"
+          />
+        </div>
       </section>
 
       <section class="checkOutContainer">
