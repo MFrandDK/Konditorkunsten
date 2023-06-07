@@ -1,4 +1,5 @@
 <script setup>
+// Nedenfor benyttes isProxy og toRaw, som gjorde det muligt at modtage data uden proxy strukturen, inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy"
 import { computed, isProxy, toRaw } from 'vue'
 import { useCartStore } from '@/stores/CartStore'
 
@@ -19,7 +20,8 @@ const cartItems = computed(() => {
   }
 })
 
-// Fjern et produkt fra kurven baseret på dets id
+// Nedenfor er en funktion som kan kaldes for, at fjerne et produkt fra kurven, via produktets id
+// toRaw inspiration fundet her: "inspiration til dette blev fundet jer: "https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy""
 const removeItem = (id) => {
   const rawId = toRaw(id);
   cart.removeItem(rawId);
