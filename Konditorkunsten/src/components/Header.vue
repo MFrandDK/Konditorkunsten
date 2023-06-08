@@ -9,7 +9,7 @@
     /></a>
     <nav>
       <a href="https://www.emil-jensen-portfolio.dk/">Forside</a>
-      <RouterLink to="/shop">Shop</RouterLink>
+      <RouterLink to="/">Shop</RouterLink>
       <a href="https://www.emil-jensen-portfolio.dk/kurser/">Kurser</a>
       <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/">Om os</a>
       <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/">Kontakt</a>
