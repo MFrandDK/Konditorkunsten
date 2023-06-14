@@ -22,7 +22,7 @@
         <div class="mobileSpacer"></div>
         <button @click="addToCart(product)" class="tilføjTilKurvBtn">Tilføj til kurv</button>
         <div class="mobileSpacer"></div>
-        <RouterLink class="removeListStyling" to="/kurv"><button class="gåTilKurvBtn">Gå til kurv</button></RouterLink>
+        <router-link class="removeListStyling" to="/kurv"><button class="gåTilKurvBtn">Gå til kurv</button></router-link>
       </div>
     </article>
   </section>

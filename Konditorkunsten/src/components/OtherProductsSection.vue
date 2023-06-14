@@ -6,7 +6,7 @@
       <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
       <article class="productInfo">
         <h3>Kage navn</h3>
-        <RouterLink to="/produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
+        <router-link to="/produkt"><button class="cakeBtn">Se produkt</button></router-link>
       </article>
     </article>
 
@@ -14,7 +14,7 @@
       <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
       <article class="productInfo">
         <h3>Kage navn</h3>
-        <RouterLink to="/produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
+        <router-link to="/produkt"><button class="cakeBtn">Se produkt</button></router-link>
       </article>
     </article>
 
@@ -22,7 +22,7 @@
       <img src="../assets/pictures/ChokoladeCheesecake.jpg" alt="" loading="lazy" />
       <article class="productInfo">
         <h3>Kage navn</h3>
-        <RouterLink to="/produkt"><button class="cakeBtn">Se produkt</button></RouterLink>
+        <router-link to="/produkt"><button class="cakeBtn">Se produkt</button></router-link>
       </article>
 
     </article>

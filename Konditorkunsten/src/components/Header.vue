@@ -9,11 +9,11 @@
     /></a>
     <nav>
       <a href="https://www.emil-jensen-portfolio.dk/">Forside</a>
-      <RouterLink to="/">Shop</RouterLink>
+      <router-link to="/">Shop</router-link>
       <a href="https://www.emil-jensen-portfolio.dk/kurser/">Kurser</a>
       <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/">Om os</a>
       <a href="https://www.emil-jensen-portfolio.dk/kontakt-konditorkunsten/">Kontakt</a>
-      <RouterLink class="kurv" to="/kurv"
+      <router-link class="kurv" to="/kurv"
         ><img
           class="kurvIcon"
           src="../assets/pictures/Shopping-kurv.svg"
@@ -21,7 +21,7 @@
           loading="lazy"
         />
         <p class="antalVarerCirkel" >{{ antalProdukterIKurven }}</p>
-      </RouterLink>
+      </router-link>
 
       <!-- Inspiration til burger-menu:
       "https://codepen.io/ysk2645/pen/wvBabpe?editors=1100" -->

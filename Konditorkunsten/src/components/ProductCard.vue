@@ -6,7 +6,7 @@
     </div>
     <article class="productInfo">
       <h3 >{{product.name}}</h3>
-      <RouterLink :to="{ name: 'product', params: { id: product.id } }"><button class="cakeBtn">Se produkt</button></RouterLink>
+      <router-link :to="{ name: 'product', params: { id: product.id } }"><button class="cakeBtn">Se produkt</button></router-link>
     </article>
   </article>
 

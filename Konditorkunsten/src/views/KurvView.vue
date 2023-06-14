@@ -58,7 +58,7 @@ const udførBestillingAlert = () => {
           <input type="email" id="email" name="email" placeholder="E-mail" />
 
           <div class="btnContainer">
-            <RouterLink to="/"> <button class="shopVidereBtn">Shop videre</button></RouterLink>
+            <router-link to="/"> <button class="shopVidereBtn">Shop videre</button></router-link>
             <input
               @click="udførBestillingAlert"
               type="submit"
