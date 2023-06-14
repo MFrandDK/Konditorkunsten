@@ -85,6 +85,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .hiddenOnDesktop {

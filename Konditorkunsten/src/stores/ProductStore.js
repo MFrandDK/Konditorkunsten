@@ -23,7 +23,7 @@ export const useProductStore = defineStore('product', {
           ...product, //spread operator for at få adgang til product images: "https://medium.com/coding-at-dawn/how-to-use-the-spread-operator-in-javascript-b9e4a8b06fab" og "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
           imageUrl: product.images[0].src //product images gemmes i seperat variabel 
         }))
-        // console.log(response.data) //console log til test af modtaget data.
+        console.log(response.data) //console log til test af modtaget data.
       } catch (error) {
         alert(error)
         console.log(error)
