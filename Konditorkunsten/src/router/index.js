@@ -9,7 +9,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: 'https://mmd.ucn.dk/class/MMD-CSD-S21/10407721/Sem4/dist/',
+      path: '/',
       name: 'shop',
       component: ShopView
     },
