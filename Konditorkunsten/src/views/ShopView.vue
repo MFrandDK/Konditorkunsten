@@ -1,18 +1,24 @@
 <script setup>
 import Header from '@/components/Header.vue'
-// import KurvSlider from '../components/KurvSlider.vue';
 import ProductCard from '@/components/ProductCard.vue'
 import KontaktComponent from '@/components/KontaktComponent.vue'
 import Footer from '@/components/Footer.vue'
-
 import { useProductStore } from '@/stores/ProductStore'
 import { onMounted, computed } from 'vue'
 
 const store = useProductStore();
 
 const products = computed(() => {
-  return store.products;
+  const categoryFilter = store.categoryFilter;
+  if (!categoryFilter) {
+    return store.products;
+  }
+  return store.products.filter((product) => product.category === categoryFilter);
 });
+
+const setCategoryFilter = (category) => {
+  store.setCategoryFilter(category);
+};
 
 // Brug af onMounted(): "https://vuejs.org/api/composition-api-lifecycle.html#onmounted"
 onMounted(() => {
@@ -24,25 +30,18 @@ onMounted(() => {
   <body>
     <Header />
     <main>
-      <!-- <KurvSlider /> -->
       <nav class="sorteringsNav">
         <ul class="navSorteringsContainerOne">
-          <li><a class="udvalgBtn" href="#">Alle varer</a></li>
-          <li><a class="udvalgBtn" href="#">Kager</a></li>
-          <li><a class="udvalgBtn" href="#">Arrangementkager</a></li>
-          <li><a class="udvalgBtn" href="#">Specialiteter</a></li>
-        </ul>
-        <ul class="navSorteringsContainerTwo">
-          <li><a class="sorteringsBtn" href="#">Sorter efter:</a></li>
-          <li><a class="sorteringsBtn btnBorder">Pris</a></li>
-          <li class="arrowDown"><a>▶</a></li>
+          <li><a class="udvalgBtn" href="#" @click="setCategoryFilter(null)">Alle varer</a></li>
+          <li><a class="udvalgBtn" href="#" @click="setCategoryFilter('Kage')">Kager</a></li>
+          <li><a class="udvalgBtn" href="#" @click="setCategoryFilter('Arrangementer')">Arrangementkager</a></li>
+          <li><a class="udvalgBtn" href="#" @click="setCategoryFilter('Specialiteter')">Specialiteter</a></li>
         </ul>
       </nav>
       <section class="productContainer">
         <div v-for="product in products" :key="product.id">
-          <ProductCard :product="product"/>
+          <ProductCard :product="product" />
         </div>
-        
       </section>
       <KontaktComponent />
     </main>
@@ -50,12 +49,13 @@ onMounted(() => {
   </body>
 </template>
 
+
 <style scoped>
 .sorteringsNav {
   display: flex;
 }
 
-.sorteringsNav > * > * > * {
+.sorteringsNav>*>*>* {
   color: var(--cta-brown);
 }
 
@@ -80,6 +80,7 @@ onMounted(() => {
   border: 0.1px solid var(--cta-brown);
   border-radius: 10px;
 }
+
 .udvalgBtn:hover {
   transition: 0.2s ease;
   cursor: pointer;
@@ -163,6 +164,7 @@ onMounted(() => {
     font-size: 3vw;
     padding: .8vw;
   }
+
   .udvalgBtn:hover {
     transition: 0.2s ease;
     cursor: pointer;
@@ -192,7 +194,7 @@ onMounted(() => {
   }
 
   .btnBorder {
-  padding: 0.5vw 1.5vw;
-}
+    padding: 0.5vw 1.5vw;
+  }
 }
 </style>
